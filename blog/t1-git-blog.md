@@ -1,24 +1,15 @@
-<!-- This template is in markdown, not html, so
-  it will not render beautifully when you copy and
-  paste it into your github.io site, but it will at
-  least be published. Next week you'll be creating a
-  blog template using HTML and CSS and you'll be able
-  to copy and paste the blog posts from week 1 in there
-  to make them pretty next week.
+Bluegills Chicago - Phase 0, Week 1
+A whirlwind through git, GitHub, and the command line
+Sept.18, 2014
 
-  For now, please replace the title, subtitle (if desired),
-  and date with the text you would like. Markdown is pretty
-  simple, so you can just feel free to type. =) -->
+This is only the first week of Phase 0 and I can say with certainty that I have learned A LOT. My brain is swimming with this stuff, I've even been dreaming about it! Unit 1 focused on the basics of git, GitHub, and the command line--all tools that were completely new to me at the start of this week.
 
+To talk about each of these things, we first have to talk about version control. Version control is a god-send for all the control freaks out there, myself included. Metaphorically speaking, version control keeps track of all the changes made on a file through a collection of snapshots. By keeping a log of all these snapshots, version control works like a photo album of the work in progress, and this is great because you can always travel back to a specific version--whether it be for debugging or experimenting--and work on the project at that particular state. Nothing is lost, all is carefully documented, and disaster is averted.
 
-# Title
-#### Subtitle
-#### Date
+Our first lessons at DBC centered around git, a version control software you install onto your computer using the command line. In addition to all the sweet version control functionality, git also uses something called "branches." Branches are copies of the project and users can make as many branches of the original (officially called the master) as they'd like. Because branches are copies, users can try new things in the branches without worrying about destroying the master. We can make multiple branches, experiment within them, and choose the one we like best. Finally, git allows us to merge the branch into the master to ultimately refine the master into its absolute best.
 
-Paragraph 1
+We've covered git and the command line, but what about GitHub?
 
-Paragraph 2
+First off, it's important to note that GitHub is different from git. While git is a piece of software you download onto your computer, GitHub exists remotely on the internet. Although different, the two are not separate because git and GitHub work together. By syncing git on our computer to GitHub on the internet, we can send (or push) the work we do on our computer to GitHub, and we can receive (or pull) from GitHub onto our computers. To give an example, DBC's Phase 0 is off-site and all our assignments come through GitHub. On a larger scale, GitHub's open source, social coding network allows you to share your code on the internet and collaborate with GitHub users all over the world. When you have access to that many developers, the possibilities are endless.
 
-Paragraph 3
-
-Add as many paragraphs as you want!!!
+So that mostly sums up what I've learned over the past... four (??!) days. I'm looking forward to what's next.
