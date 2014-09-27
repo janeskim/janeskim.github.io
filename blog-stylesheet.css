@@ -1,52 +1,133 @@
-*{
-  background-color: white;
-  font-family: Verdana;
+* {
+  background-color: #ffffff;
+  font-family: Futura;
 }
 
-#title {
+/*DIV BORDER: for visualizing placement of elements on the page
+
+div {
   border: 1px solid black;
-  width: 600px;
-  font-family: Verdana;
-  font-size: 4em;
+}*/
+
+
+/*COLORBAR*/
+
+#color_bar {
+  width: 99%;
+  height: 30px;
+  background-color: #ffff33;
+  position: absolute;
+}
+
+/*HEADER: logo and social media links*/
+
+#header {
+  height: 65px;
+  width: 99%;
+  position: absolute;
+  margin: auto;
+  clear: both;
+  top: 80px;
+}
+
+#logo {
+  border: 3px solid black;
+  float: left;
+  position: relative;
+  top: 0px;
+  left: 20px;
+  height: 50px;
+  width: 250px;
+  font-size: 36px;
+  padding: 5px;
   text-align: center;
-  margin: auto;
 }
 
-table {
-  margin: auto;
-  width: 1200px;
-  border: 1px solid black;
-  margin-top: 50px;
-  border-collapse: collapse;
+#social {
+  height: 60px;
+  width: 180px;
+  float: right;
+  position: relative;
+}
+
+img {
+  height: 30px;
+  width: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+}
+
+/*CONTENT: contains About Me, Menu, and Archive*/
+
+#content {
+  width: 98%;
+  height: 400px;
+  position: absolute;
+  top: 80px;
+}
+
+/*SIDEBAR: about me and menu*/
+
+#sidebar {
+  display: inline-block;
+  vertical-align: top;
+  height: 400px;
+  width: 280px;
+}
+
+#about {
+  width: 220px;
+  height: 75px;
+  position: relative;
+  top: 15px;
+  left: 20px;
+  right: 10px;
+  padding-left: 30px;
+  font-size: 16px;
+}
+
+#menu {
+  width: 220px;
+  position: relative;
+  top: 10px;
+  left: 20px;
+  right: 10px;
+  padding-left: 30px;
+  font-size: 20px;
+}
+
+/*ARCHIVE: table of contents for blogs and projects*/
+
+#archive {
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 10px;
+  margin-left: 30px;
 }
 
 td {
-  font-size: 2em;
+  height: 60px;
+}
+
+hr {
+  border: 1px dashed black;
+  width: 1050px;
   text-align: center;
-  border:1px solid black;
-  width: 400px;
-  padding: 10px;
-  background-color: #6B006B;
 }
 
-.Blog_post {
-  border:1px solid black;
-  width: 1180px;
-  margin:auto;
-  padding: 10px;
-  font-size: 1em;
+#date {
+  font-family: Helvetica;
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin-left: 100px;
 }
 
-#previous {
-  display: inline-block;
-  border: 1px solid black;
-  margin-left: 350px;
-  margin-right: 300px;
+#title {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-left: 100px;
 }
 
-#next {
-  display: inline-block;
-  border: 1px solid black;
-  margin-right: 300px;
-  margin-left: 200px;
-}
+
+
