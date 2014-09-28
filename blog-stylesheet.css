@@ -74,7 +74,7 @@ a:visited > p {
   position: relative;
 }
 
-img {
+#social_icon {
   height: 30px;
   width: 30px;
   padding-top: 10px;
@@ -174,9 +174,19 @@ hr {
   margin-left: 100px;
   margin-top: 0px;
   font-size: 18px;
-  width: 870px;
+  width: 850px;
   padding-top: 0px;
 }
+
+img {
+  width: 700px;
+}
+
+#image_link {
+  font-size: 10px;
+}
+
+/*FOOTER: copyright, maintains spacing*/
 
 #footer {
   position: relative;
