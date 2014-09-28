@@ -1,6 +1,6 @@
 * {
   background-color: #ffffff;
-  font-family: Futura;
+  font-family: Montserrat;
 }
 
 /*DIV BORDER: for visualizing placement of elements on the page
@@ -42,6 +42,10 @@ a:hover > p {
 a:visited > p {
   text-decoration: none;
   color: black;
+}
+
+#black_logo {
+  font-family: Futura;
 }
 
 #black_logo:hover {
@@ -112,7 +116,8 @@ img {
 }
 
 #about {
-  width: 220px;
+  font-family: Muli;
+  width: 230px;
   height: 75px;
   position: relative;
   top: 15px;
@@ -152,7 +157,7 @@ hr {
 }
 
 #date {
-  font-family: Futura;
+  font-family: Muli;
   font-size: 14px;
   margin-bottom: 10px;
   margin-left: 100px;
@@ -165,10 +170,10 @@ hr {
 }
 
 #post {
-  font-family: Georgia;
+  font-family: Muli;
   margin-left: 100px;
   margin-top: 0px;
-  font-size: 16px;
+  font-size: 18px;
   width: 870px;
   padding-top: 0px;
 }
