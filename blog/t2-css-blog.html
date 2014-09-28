@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link type="text/html" rel="stylesheet" href="../blog-stylesheet.css">
+  <title>Jane S. Kim</title>
+</head>
+<body>
+
+  <!--COLORBAR-->
+
+  <div id="color_bar"></div>
+
+
+  <!--HEADER-->
+
+  <div id="header">
+
+    <div id="logo">
+        <a id="black_logo" href="http://janeskim.github.io">Jane S. Kim</a>
+    </div>
+
+    <div id="social">
+      <a href="mailto:kim.jane.sue@gmail.com"><img src="http://files.gandi.ws/gandi37399/image/email2.png" /></a>
+      <a href="http://www.twitter.com/happygeometry"><img src="http://innovationcafepsu.files.wordpress.com/2013/04/twitter1.gif" /></a>
+      <a href="https://www.linkedin.com/pub/jane-kim/a3/210/79"><img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_black-128.png" /></a>
+      <a href="http://www.github.com/janeskim"><img src="http://jonathanodonnell.herokuapp.com/github.png" /></a>
+    </div>
+
+
+ <!--START OF CONTENT DIV-->
+ <div id="content">
+
+   <!--SIDEBAR-->
+
+    <div id="sidebar">
+      <div id="photo">
+        <img id="smileyface" src="https://33.media.tumblr.com/21c98794416b91dc81c01bb309431082/tumblr_ncl1hhhgTL1tjbl33o1_400.png" />
+      </div>
+      <div id="about">
+        Hello! My name is Jane
+        <br>and I'm a student at
+        <br>DevBootcamp in Chicago.
+      </div>
+      <div id="menu">
+        <p><a id="menu_link" href="http://janeskim.github.io">BLOG</a></p>
+        <p><a id="menu_link" href="http://janeskim.github.io">PROJECT</a></p>
+        <p><a id="menu_link" href="http://janeskim.github.io">LIBRARY</a></p>
+      </div>
+    </div>
+
+   <!--ARCHIVE: part of "content ID"-->
+
+    <div id="archive">
+      <table>
+        <tr>
+          <td>
+            <hr></hr>
+              <p id="date">Sept. 27, 2014</p>
+              <p id="title">CSS Positioning: The Difference between Static, Relative, Absolute and Fixed Positioning</td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <!--BLOG POST GOES HERE, use <br> as necessary-->
+              We use CSS to style our HTML elements such as changing the font on a paragraph or adding a color to the background, but we can also use CSS to place elements on a page.There are four types of CSS positioning values: <code>static</code>, <code>relative</code>, <code>absolute</code> and <code>fixed</code>.
+
+              <br><br>When things are in the normal flow, they are already in <code>static</code> positioning. Declaring position: static is the same as not declaring at all. HTML elements are rendered from top to bottom, and child and sibling elements sit inside the parent element when things are in static positioning.
+
+              <br><br>When an element in declared to be in <code>relative</code> positioning, it is still in the normal flow but slightly altered. In other words, the element is placed in relation to its position in the normal flow. By using the properties <code>top</code>, <code>bottom</code>, <code>left</code>, and <code>right</code>, we can move the element a certain number of pixels from the top, bottom, left or right of where it would normally be. Since the element is still part of the normal flow, it continues to work with the other HTML elements. Child elements will still be nested in their parent elements and elements will move from top to bottom, but we can specify values which will move the elements from their static position.
+
+              <br><br>Unlike static and relative positioning, <code>absolute</code> positioning takes an element completely out of the normal flow. If it has a parent element, it is positioned in the top left of the parent element. If it does not have a parent element, it is positioned relative to the browser window. We can use the properties <code>top</code>, <code>bottom</code>, <code>left</code>, and <code>right</code> to adjust the element's location on the page.
+
+              <br><br>Like the absolute element, the <code>fixed</code> element is also taken out of the normal flow. However, it stays fixed to the position on the browser and does not scroll with the page. I'm sure you've seen websites with a navigation bar at the top that always remains there, even when you're scrolling through the page--that's an example of a fixed element.
+
+              <br><br><br>Here are some helpful resources to clarify CSS positioning:
+              <br><a href="http://www.codecademy.com/forum_questions/50f4375c5b45060212005e7d">CodeAcademy forum</a>
+              <br><a href="http://www.cssbasics.com/css-positioning/">CSS Basics</a></p>
+            </p>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  <!--FOOTER-->
+
+    <div id="footer">
+      Copyright 2014 Jane S. Kim | Powered by Octopress
+    </div>
+
+  </div>
+  <!--END OF CONTENT DIV-->-->
+
+
+</body>
+</html>
+
