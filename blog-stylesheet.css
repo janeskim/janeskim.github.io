@@ -140,6 +140,7 @@ a:visited > p {
 /*ARCHIVE: table of contents for blogs and projects*/
 
 #archive {
+  position: absolute;
   display: inline-block;
   vertical-align: top;
   padding-top: 10px;
