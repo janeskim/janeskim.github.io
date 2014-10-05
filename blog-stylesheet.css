@@ -185,6 +185,10 @@ img {
   width: 800px;
 }
 
+#image_long {
+  width: 700px;
+}
+
 #image_link {
   font-size: 10px;
 }
