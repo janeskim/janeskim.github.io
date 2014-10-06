@@ -58,14 +58,14 @@
           <td>
             <hr></hr>
               <p id="date">Oct. 5, 2014</p>
-              <p id="title">Data Structures: Arrays and Hashes</p>
+              <p id="title">Data Structures: An Introduction to Arrays and Hashes</p>
           </td>
         </tr>
         <tr>
           <td>
             <p id="post">
               <!--BLOG POST GOES HERE, use <br> as necessary-->
-              <br>One of the basic building blocks in Ruby are <strong>variables</strong>. Just like algebra, we write Ruby variables to represent a specific value. We also call the variable when we want to use its value in the code.
+              <br>One of the fundamental building blocks of Ruby are <strong>variables</strong>. Just like algebra, we write Ruby variables to represent a specific value. We can also call a variable when we want to use its value in the code.
 
               <br><br><code>>> x = 1234567890
               <br>1234567890
@@ -74,9 +74,9 @@
 
               <br><br>In the example above, the variable <code>x</code> represents the number 1234567890. In Ruby, variables can hold <strong>numbers</strong>, <strong>strings</strong> (words and sentences) and <strong>boolean expressions</strong> (a term in Ruby referring to true or false statements).
 
-              <br><br><strong>Arrays</strong> and <strong>hashes</strong> are a specific type of variable called a <strong>data structure</strong>. Just like variables, data structures hold value but arrays and hashes are different in that they can hold <strong>more than one value</strong>. In other words, arrays and hashes are lists. Arrays and hashes differ from each other in a few important ways, so let's examine the syntax and functionality of each item.
+              <br><br><strong>Arrays</strong> and <strong>hashes</strong> are a specific type of variable called a <strong>data structure</strong>. Just like variables, data structures hold value but arrays and hashes are different in that they can hold <strong>more than one value</strong>. In other words, arrays and hashes are lists. The two data structures differ from each other in a few important ways, so let's examine the syntax and functionality of each item.
 
-              <br><br><strong><u>ARRAYS</u></strong>
+              <br><br><br><strong><u>ARRAYS</u></strong>
 
               <br><br>This is how we write an array.
 
@@ -84,20 +84,20 @@
 
               <br><br>Just like the example of the variable <code>x</code>, we first give the array a name <code>my_array</code> and set it equal <code>=</code> to a value, which is the list contained within the brackets <code>[1, 2, 3, 4, 5]</code>.  To note the obvious, we separate different items in the list using commas. This goes across the board for arrays and hashes. We can name our array anything we want and we can fill the array's brackets with any combination of numbers, strings and boolean expressions.
 
-              <br><br>In order to access a specific value in the array, we have to know its <strong>index number</strong>. Naturally we would call <code>1</code> the first element in the array, but arrays start from the index number 0. To print <code>1</code> from our array, this is how we would write it.
+              <br><br>In order to access a specific value in the array, we have to know its <strong>index number</strong>. Naturally we would call <code>1</code> the first element in <code>my_array</code>, but arrays start from the index number 0. To print <code>1</code>, this is how we would write it.
 
               <br><br><code>>> puts my_array[0]
               <br>1</code>
 
-              <br><br>In the example above, we use the <strong>method</strong> <code>puts</code> to print out <code>1</code>. Methods are like commands, and arrays have a plethora of methods to manipulate the data. In our very first example with the variable <code>x</code>, we used the method <code>*</code> (or multiply) to manipulate our variable. Like I said, there are SO MANY methods we can use on the data in <code>my_array</code>, but the important thing to know is arrays are <strong>indexed lists</strong>.
+              <br><br>In the example above, we use the <strong>method</strong> <code>puts</code> to print out <code>1</code>. Methods are like commands, and arrays have a plethora of methods to manipulate the data. In our very first example with the variable <code>x</code>, we used the method <code>*</code> (or multiply) to manipulate our variable. As I mentioned before, there are so many methods we can use on the data in <code>my_array</code>, but the important thing to know is arrays are <strong>indexed lists</strong>.
 
-              <br><br><strong><u>HASHES</u></strong>
+              <br><br><br><strong><u>HASHES</u></strong>
 
               <br><br>This is how we write a hash.
 
               <br><br><code>>> my_hash = { "name" => "Jane", "city" => "Chicago", "ice_cream" => "always"}</code>
 
-              <br><br>We have the name for our hash <code>my_hash</code> and set it equal <code>=</code> to a set of values in the curly brackets. Values are separated by commas, just like arrays. However, unlike arrays where the value is referred to by its index number, hashes create <strong>key-value pairs</strong>. In the example for <code>my_hash</code>, the key <code>"name"</code> refers to its value pair <code>"Jane"</code>; the key <code>"city"</code> refers to its value pair <code>"Chicago"</code>; and the key <code>"ice cream"</code> refers to its value pair <code>"always"</code>. Keys refer to their values using the symbol <code>=></code>.
+              <br><br>We named our hash <code>my_hash</code> and set it equal <code>=</code> to a set of values in the curly brackets <code>{ }</code>. Values are separated by commas, just like arrays. While arrays refer to elements by the index number, hashes create <strong>key-value pairs</strong>. In the example for <code>my_hash</code>, the key <code>"name"</code> refers to its value pair <code>"Jane"</code>; the key <code>"city"</code> refers to its value pair <code>"Chicago"</code>; and the key <code>"ice cream"</code> refers to its value pair <code>"always"</code>. Keys refer to their values using the symbol <code>=></code>.
 
               <br><br>(I'm sure you also noticed all those quotation marks up there. We tell Ruby that we're using strings with quotation marks, but we don't need the quotation marks for numbers or booleans.)
 
@@ -106,13 +106,9 @@
               <br><br><code>>> puts my_hash["name"]
               <br>"Jane"</code>
 
-              <br><br>A good way to remember the functionality of hashes is to think of a dictionary: the word we are looking up is the key and its definition is the value pair. There are many, many methods for accesing and using the data in hashes but the foundational take-away for hashes is they are <strong>key-value pairs</strong>.
+              <br><br>Hashes are useful when we want to link two pieces of information together, such a list of clients and their phone numbers. There are many, many methods for accesing and using the data in hashes but the foundational take-away for hashes is they are <strong>key-value pairs</strong>.
 
-              <br><br>So it looks like we've covered some of the basic data structures for Ruby. Not too difficult to understand, right?
-
-              <br><br><br>If you want more practice with arrays and hashes, CodeAcademy has an excellent intro course:
-              <br><a href="http://www.codecademy.com/courses/ruby-beginner-en-F3loB/0/1?curriculum_id=5059f8619189a5000201fbcb">CodeAcademy - Data Structures</a>
-
+              <br><br><br>Arrays and hashes are just a few examples of the basic ways we can organize data within Ruby. If you want more practice with the two, <a href="http://www.codecademy.com/courses/ruby-beginner-en-F3loB/0/1?curriculum_id=5059f8619189a5000201fbcb">CodeAcademy</a> has a helpful intro course.
             </p>
           </td>
         </tr>
