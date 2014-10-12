@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link type="text/html" rel="stylesheet" href="../blog-stylesheet.css">
+  <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <title>Jane S. Kim</title>
+</head>
+<body>
+
+  <!--COLORBAR-->
+
+  <div id="color_bar"></div>
+
+
+  <!--HEADER-->
+
+  <div id="header">
+
+    <div id="logo">
+        <a id="black_logo" href="http://janeskim.github.io">Jane S. Kim</a>
+    </div>
+
+    <div id="social">
+      <a href="mailto:kim.jane.sue@gmail.com"><img id="social_icon" src="http://files.gandi.ws/gandi37399/image/email2.png" /></a>
+      <a href="http://www.twitter.com/happygeometry"><img id="social_icon" src="http://innovationcafepsu.files.wordpress.com/2013/04/twitter1.gif" /></a>
+      <a href="https://www.linkedin.com/pub/jane-kim/a3/210/79"><img id="social_icon" src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_black-128.png" /></a>
+      <a href="http://www.github.com/janeskim"><img id="social_icon" src="http://jonathanodonnell.herokuapp.com/github.png" /></a>
+    </div>
+  </div>
+
+ <!--START OF CONTENT DIV-->
+ <div id="content">
+
+   <!--SIDEBAR-->
+
+    <div id="sidebar">
+      <div id="photo">
+        <img id="smileyface" src="https://33.media.tumblr.com/21c98794416b91dc81c01bb309431082/tumblr_ncl1hhhgTL1tjbl33o1_400.png" />
+      </div>
+      <div id="about">
+        Hello! My name is Jane
+        <br>and I'm a student at
+        <br>DevBootcamp in Chicago.
+      </div>
+      <div id="menu">
+        <p><a id="menu_link" href="http://janeskim.github.io">BLOG</a></p>
+        <p><a id="menu_link" href="http://janeskim.github.io">PROJECT</a></p>
+        <p><a id="menu_link" href="http://janeskim.github.io">LIBRARY</a></p>
+      </div>
+    </div>
+
+   <!--ARCHIVE: part of "content ID"-->
+
+    <div id="archive">
+      <table>
+        <tr>
+          <td>
+            <hr></hr>
+              <p id="date">Oct. 11, 2014<!--DATE GOES HERE--></p>
+              <p id="title">Enumerables: Iterating With Finer Control<!--TITLE GOES HERE--></p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <!--BLOG POST GOES HERE, use <br> as necessary-->
+              <br>Last week we discussed how <a href="http://janeskim.github.io/blog/t4-arrays-hashes.html">arrays and hashes</a> are ordered lists. We touched upon <strong>methods</strong> and explained them briefly as commands that can be executed by objects. This time we're going more indepth into a related Ruby concept about methods called <strong>Enumerables</strong>.
+
+              <br><br>The Enumerable is a module. The term "module" simply means characteristics common to objects in the module. In this case, all Enumerable share a specific structure: the object must be able to apply a method over elements within itself. For example, lists can apply a method over each item in the list. Arrays and hashes fall under the Enumerable module, and as a result, they can accept Enumerable methods. The repetition of a method over each item in an object is called <strong>iteration</strong>.
+
+              <br><br>To talk more about how Enumerables iterate over an object, let's look at the Enumerable method, <code>#group_by</code>. Simply put, the method <code>group_by</code> breaks a list into groups based on specified criteria. It <strong>takes a list as its input and returns a hash as its output</strong>.
+
+              <br><br>Let's at the general syntax for <code>#group_by</code> then go into more specific examples.
+
+              <br><br><code>>>input.group_by { |x| x }</code>
+
+              <br><br>Aside from a few exceptions, methods are called using a <code>.</code> period. In our syntax example, our <code>input</code> on the left side of the period is the object receiving the method. On the right side of the we have the method <code>group_by</code> which is being sent to the object.
+
+              <br><br>Next are a pair of curly brackets. This is where we expand the method <code>group_by</code> with more specific information on how we want it to group the input. The variable within the pipes <code>|x|</code> acts as a placeholder for each item in the input list. Think of the pipes as a door: each item of the input collection is lining up to walk through these pipes in order access the block of code specified in the curly brackets. In our syntax example above, we only have <code>x</code> after the pipes, but we can expand this part of the code to specify how we want to group each of the items.
+
+              <br><br>Let's take a look at a live example.
+
+              <br><br><code>>>input_array = [ "Jane", "Jeff", "Tonya", "Hannah", "Harry" ]
+              <br>>>input_array.group_by { |name| name.length }
+              <br>{ 4 => ["Jane", "Jeff"] , 5 => ["Tonya", "Harry"] , 6 => ["Hannah"] }</code>
+
+              <br><br>We called the method <code>.length</code> on our variable <code>name</code>. The method counted the number of characters in each item in the <code>input_array</code>. The output hash took the length of item as the <strong>key</strong> and grouped the input into arrays for the <strong>value</strong>.
+
+              <br><br>Here's another example.
+
+              <br><br><code>>>input_array = [ 2, 6, 5, 4, 10, 3, 3, 51 ]
+              <br>>>input_array.group_by { |number| number.even? }
+              <br>{ true => [ 2, 6, 4, 10 ] , false => [ 5, 3, 3, 51 ] }</code>
+
+              <br><br>This time we used the method with a question mark at the end <code>even?</code> which returns a true or false, also known as a boolean value, and grouped the data accordingly.
+
+              <br><br>These are the basics of Enumerables. Enumerable methods are important because they allow us to organize the data in arrays and hashes into useful and applicable forms. The Ruby-Docs are a foundational source for learning about methods, you can check out the documentation here:
+              <br><a href="http://www.ruby-doc.org/core-2.0/Enumerable.html">Ruby Docs for Enumerables</a>
+              <br><a href="http://www.ruby-doc.org/core-2.0/Array.html">Ruby Docs for Arrays</a>
+              <br><a href="http://www.ruby-doc.org/core-2.0/Hash.html">Ruby Docs for Hashes</a>
+            </p>
+          </td>
+        </tr>
+      </table>
+
+        <!--FOOTER nested inside archive/contents div for relative positioning-->
+        <div id="footer">
+          Copyright 2014 Jane S. Kim | Powered by Octopress
+        </div>
+
+    </div>
+    <!--END OF ARCHIVE DIV-->
+
+ </div>
+  <!--END OF CONTENT DIV-->
+
+</body>
+</html>
