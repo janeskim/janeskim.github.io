@@ -57,8 +57,8 @@
         <tr>
           <td>
             <hr></hr>
-              <p id="date">Oct. 11, 2014<!--DATE GOES HERE--></p>
-              <p id="title">Enumerables: Iterating With Finer Control<!--TITLE GOES HERE--></p>
+              <p id="date">Oct. 11, 2014</p>
+              <p id="title">Enumerables: Iterating With Finer Control</p>
           </td>
         </tr>
         <tr>
@@ -67,7 +67,7 @@
               <!--BLOG POST GOES HERE, use <br> as necessary-->
               <br>Last week we discussed how <a href="http://janeskim.github.io/blog/t4-arrays-hashes.html">arrays and hashes</a> are ordered lists. We touched upon <strong>methods</strong> and explained them briefly as commands that can be executed by objects. This time we're going more indepth into a related Ruby concept about methods called <strong>Enumerables</strong>.
 
-              <br><br>The Enumerable is a module. The term "module" simply means characteristics common to objects in the module. In this case, all Enumerable share a specific structure: the object must be able to apply a method over elements within itself. For example, lists can apply a method over each item in the list. Arrays and hashes fall under the Enumerable module, and as a result, they can accept Enumerable methods. The repetition of a method over each item in an object is called <strong>iteration</strong>.
+              <br><br>The Enumerable is a module. A module is a collection of objects that share a common set of traits. In this case, all Enumerable share a specific structure: the object must be able to apply a method over elements within itself. For example, lists can apply a method over each item in the list. Arrays and hashes fall under the Enumerable module, and as a result, they can accept Enumerable methods. The repetition of a method over each item in an object is called <strong>iteration</strong>.
 
               <br><br>To talk more about how Enumerables iterate over an object, let's look at the Enumerable method, <code>#group_by</code>. Simply put, the method <code>group_by</code> breaks a list into groups based on specified criteria. It <strong>takes a list as its input and returns a hash as its output</strong>.
 
