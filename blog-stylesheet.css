@@ -82,6 +82,18 @@ a {
   color: black;
 }
 
+a:hover {
+  color: white;
+}
+
+#post a {
+  text-decoration: underline;
+}
+
+#post a:hover {
+  color: white;
+}
+
 a:hover > p {
   text-decoration: underline;
 }
@@ -157,6 +169,11 @@ hr {
   border: 1px dashed black;
   width: 1030px;
   text-align: center;
+}
+
+h1 {
+  margin-top: 10px;
+  margin-left: 100px;
 }
 
 #date {
