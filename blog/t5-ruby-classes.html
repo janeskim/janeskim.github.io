@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link type="text/html" rel="stylesheet" href="../blog-stylesheet.css">
+  <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <title>Jane S. Kim</title>
+</head>
+<body>
+
+  <!--COLORBAR-->
+
+  <div id="color_bar"></div>
+
+
+  <!--HEADER-->
+
+  <div id="header">
+
+    <div id="logo">
+        <a id="black_logo" href="http://janeskim.github.io">Jane S. Kim</a>
+    </div>
+
+    <div id="social">
+      <a href="mailto:kim.jane.sue@gmail.com"><img id="social_icon" src="http://files.gandi.ws/gandi37399/image/email2.png" /></a>
+      <a href="http://www.twitter.com/happygeometry"><img id="social_icon" src="http://innovationcafepsu.files.wordpress.com/2013/04/twitter1.gif" /></a>
+      <a href="https://www.linkedin.com/pub/jane-kim/a3/210/79"><img id="social_icon" src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_black-128.png" /></a>
+      <a href="http://www.github.com/janeskim"><img id="social_icon" src="http://jonathanodonnell.herokuapp.com/github.png" /></a>
+    </div>
+  </div>
+
+ <!--START OF CONTENT DIV-->
+ <div id="content">
+
+   <!--SIDEBAR-->
+
+    <div id="sidebar">
+      <div id="photo">
+        <img id="smileyface" src="https://33.media.tumblr.com/21c98794416b91dc81c01bb309431082/tumblr_ncl1hhhgTL1tjbl33o1_400.png" />
+      </div>
+      <div id="about">
+        Hello! My name is Jane
+        <br>and I'm a student at
+        <br>DevBootcamp in Chicago.
+      </div>
+      <div id="menu">
+        <p><a id="menu_link" href="http://janeskim.github.io/tech.html">TECH</a></p>
+        <p><a id="menu_link" href="http://janeskim.github.io/culture.html">CULTURE</a></p>
+        <p><a id="menu_link" href="http://janeskim.github.io">PROJECTS</a></p>
+        <p><a id="menu_link" href="http://janeskim.github.io">LIBRARY</a></p>
+      </div>
+    </div>
+
+   <!--ARCHIVE: part of "content ID"-->
+
+    <div id="archive">
+      <table>
+        <tr>
+          <td>
+            <hr></hr>
+              <p id="date"><!--DATE GOES HERE-->Oct. 15, 2014</p>
+              <p id="title"><!--TITLE GOES HERE-->Classes: Bringing Together Objects and Methods</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <!--BLOG POST GOES HERE, use <br> as necessary-->
+              <br>Ruby is an <strong>object-oriented programming</strong> language. This means that getting anything done in Ruby requires working with objects: objects contain data and we ask objects to manipulate and return data in useful forms.
+
+              <br><br>Last week we looked into an example of the method <code>#each_by</code> in the <a href="http://janeskim.github.io/t4-enumerable-methods.html">Enumerable module</a>. All the methods in the Enumerable module only work on objects that are lists. This is because different types of objects can only execute certain types of tasks. An object's ability to use a method depends on its <strong>class</strong>.
+
+              <br><br>Let's take a real life example: when we have the numbers "2" and "4" we can complete addition, subtraction, multiplication and division. When we have the words "cat" and "pig", we can't run those mathematical actions on the words. "cat" - "pig" = ? Doesn't work quite the same. If we think about this in Ruby terms, the objects "2" and "4" are in the <strong>class</strong> number and the objects "cat" and "pig" are in the <strong>class</strong> words. Different types of classes have certain characteristics and those classes can execute a specific set of methods.
+
+              <br><br>In Ruby, we can actually create our own classes in Ruby. We can also create objects that belong to a class and have the objects execute specific tasks. For our example, let's create a class of bikes. What are some of the characteristics a bike has? A bike has a color, wheels, and gears. What kinds of actions can a bike do? The bike can speed up, slow down and come to a full stop. Now, let's translate this into Ruby code.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>class Bike
+                  <br><br>&nbsp;&nbsp;&nbsp;def initialize(color, wheels, gears)
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@color = color
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@wheels = wheels
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@gears = gears
+                  <br>&nbsp;&nbsp;&nbsp;end
+
+                  <br><br>&nbsp;&nbsp;&nbsp;def specs
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts "My bike is #{@color}, has wheels that are #{@wheels} tall and #{@gears} speeds."
+                  <br>&nbsp;&nbsp;&nbsp;end
+
+                  <br><br>&nbsp;&nbsp;&nbsp;def ride
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts "We are riding the bike."
+                  <br>&nbsp;&nbsp;&nbsp;end
+                <br><br>end
+                <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+                <br>This is a very simple example of our new class, Bike. Anytime we create an object that belongs to the class <code>Bike</code> we must specify three characteristics: the color, the wheels, and the gears. Once the object has been created, it can take the methods <code>specs</code> and <code>ride</code>.
+
+                <br><br>Let's see our method in action here.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+                <br><br>>>turbo = Bike.new("red", "29 inches", 3)
+                <br>>>turbo.specs
+                <br>"My bike is red, has wheels that are 29 inches tall and 3 speeds."
+                <br>>>turbo.ride
+                <br>"We are riding the bike."
+                <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+                <br>This is a very, very simple example of how classes work. Here we created a new object called <code>turbo</code>, defined it as belonging to the class <code>Bike</code> and specified three characteristics. We called the methods <code>specs</code> and <code>ride</code> on the object <code>turbo</code> and executed two functions.
+
+                <br><br>There are many ways to change characteristics, add methods and change our classes, but the important thing to know are every object in Ruby belongs to a class, which gives it a set characteristics and methods.
+            </p>
+          </td>
+        </tr>
+      </table>
+
+        <!--FOOTER nested inside archive/contents div for relative positioning-->
+        <div id="footer">
+          Copyright 2014 Jane S. Kim | Powered by Octopress
+        </div>
+
+    </div>
+    <!--END OF ARCHIVE DIV-->
+
+ </div>
+  <!--END OF CONTENT DIV-->
+
+</body>
+</html>
