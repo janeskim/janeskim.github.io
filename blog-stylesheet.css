@@ -115,9 +115,9 @@ a:visited > p {
 }
 
 #smileyface {
-  width: 150px;
-  height: 150px;
-  border-radius: 100%;
+  width: 202px;
+  height: 334px;
+  margin-left: -15px;
 }
 
 #about {
