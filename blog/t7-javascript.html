@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link type="text/html" rel="stylesheet" href="../blog-stylesheet.css">
+  <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <title>Jane S. Kim</title>
+</head>
+<body>
+
+  <!--COLORBAR-->
+
+  <div id="color_bar"></div>
+
+
+  <!--HEADER-->
+
+  <div id="header">
+
+    <div id="logo">
+        <a id="black_logo" href="http://janeskim.github.io">Jane S. Kim</a>
+    </div>
+
+    <div id="social">
+      <a href="mailto:kim.jane.sue@gmail.com"><img id="social_icon" src="http://files.gandi.ws/gandi37399/image/email2.png" /></a>
+      <a href="http://www.twitter.com/happygeometry"><img id="social_icon" src="http://innovationcafepsu.files.wordpress.com/2013/04/twitter1.gif" /></a>
+      <a href="https://www.linkedin.com/pub/jane-kim/a3/210/79"><img id="social_icon" src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_black-128.png" /></a>
+      <a href="http://www.github.com/janeskim"><img id="social_icon" src="http://jonathanodonnell.herokuapp.com/github.png" /></a>
+    </div>
+  </div>
+
+ <!--START OF CONTENT DIV-->
+ <div id="content">
+
+   <!--SIDEBAR-->
+
+    <div id="sidebar">
+      <div id="photo">
+        <img id="smileyface" src="https://38.media.tumblr.com/3f9260539316f470d3ec09885f983547/tumblr_nejqi48QU61tls2v5o1_1280.png" />
+      </div>
+      <div id="about">
+        Hello! My name is Jane
+        <br>and I'm a student at
+        <br>DevBootcamp in Chicago.
+      </div>
+      <div id="menu">
+        <p><a id="menu_link" href="http://janeskim.github.io/tech.html">TECH</a></p>
+        <p><a id="menu_link" href="http://janeskim.github.io/culture.html">CULTURE</a></p>
+        <p><a id="menu_link" href="http://janeskim.github.io">PROJECTS</a></p>
+        <p><a id="menu_link" href="http://janeskim.github.io">LIBRARY</a></p>
+      </div>
+    </div>
+
+   <!--ARCHIVE: part of "content ID"-->
+
+    <div id="archive">
+      <table>
+        <tr>
+          <td>
+            <hr></hr>
+              <p id="date">Nov. 20, 2014</p>
+              <p id="title">JavaScript Objects and Ruby Hashes: Understanding Data Structures in JavaScript </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br>When it comes to understanding JavaScript, it's important to note that nearly everything in JavaScript is an object. This means that variables and data are objects as well. Much like Ruby, there are various ways we can organize data using variables in JavaScript.
+
+              <br><br>A JavaScript object is defined as <bold>an unordered collection of variables called named values</bold>. That's a whole lot of technical jargon, so let's break it down. JavaScript objects contain data, and this data is organized in a specific way: instead of numbering the data, objects keep track of the data (also called values) by giving a name to the data -- hence, <bold>named values</bold>. The JavaScript term of the name is <bold>property</bold>. These properties are like variables that refer to a value.
+
+              <br><br>To think about objects in JavaScript more concretely, let's make a simple comparison to a real life object: a house. We want to create a specific house that has one story, 2 bedrooms, 1 bathroom, and a red roof. The story, bedroom, bathroom, and roof are all properties of the object and the numbers and colors are its values. Here's how we can express this in JavaScript:
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>&nbsp;var house = {
+                <br>&nbsp;&nbsp;&nbsp;story: 1,
+                <br>&nbsp;&nbsp;&nbsp;bedroom: 2,
+                <br>&nbsp;&nbsp;&nbsp;bathroom: 1,
+                <br>&nbsp;&nbsp;&nbsp;roof: "red"
+              <br>&nbsp;}
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br>In the example above, we use the JavaScript keyword <code>var</code> to relay to the computer that we're establishing a variable. Next, we set this variable to a set of curly brackets which contains our data. The property is connected to its value using a colon <code>:</code> and each named value pair is separated by a comma. We can use numbers or strings to express values.
+
+              <br><br>A data structure with a variable name and curly brackets that holds a set of paired data separated by commas -- sound familiar? JavaScript objects are similar to <bold>Ruby hashes</bold>, which organize data using key/value pairs. If you'd like a refresher on Ruby data structures, you can check out my previous blogpost <em><a href="http://janeskim.github.io/blog/t4-arrays-hashes.html">here</a></em>.
+
+              <br><br><br>Here are some introductory resources to help you get started with JavaScript:
+              <br><a href="http://eloquentjavascript.net/">Eloquent JavaScript</a>
+              <br><a href="http://www.w3schools.com/js/js_object_definition.asp">w3schools Intro to JavaScript objects</a>
+              <br><a href="http://www.w3schools.com/js/js_objects.asp">w3schools Intro to writing and manipulating JavaScript objects</a>
+            </p>
+          </td>
+        </tr>
+      </table>
+
+        <!--FOOTER nested inside archive/contents div for relative positioning-->
+        <div id="footer">
+          Copyright 2014 Jane S. Kim | Powered by Octopress
+        </div>
+
+    </div>
+    <!--END OF ARCHIVE DIV-->
+
+ </div>
+  <!--END OF CONTENT DIV-->
+
+</body>
+</html>
