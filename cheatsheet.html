@@ -2,6 +2,8 @@
 <html>
   <head>
   	<link rel="stylesheet" type="text/css" href="cheatsheet.css">
+    <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Arvo|Bree+Serif' rel='stylesheet' type='text/css'>
     <title>Ruby Enumerables Cheatsheet</title>
   </head>
 
@@ -23,6 +25,7 @@
       </div>
 
       <div ID="right">
+        <!-- METHOD: EACH WITH INDEX -->
         <p>
           <a name="each_with_index"><h3 id="title">#each with index</h3></a>
           The #each_with_index method calls a block with two arguments: the item and the index.
@@ -35,6 +38,7 @@
           </p>
         </p>
 
+        <!-- METHOD: INJECT -->
         <p>
           <a name="inject"><h3 id="title">#inject</h3></a>
           The #inject method combines all elements of enum by applying a binary operation, specified by a block or a symbol that names a method or operator.
@@ -50,6 +54,7 @@
           </p>
         </p>
 
+        <!-- METHOD: SELECT -->
         <p>
           <a name="select"><h3 id="title">#select</h3></a>
           The #select method invokes the block passing in successive elements from self, returning an array containing those elements for which the block returns a true value.
@@ -64,6 +69,7 @@
             <br><br>#=> [2, 4, 6, 8, 10]</p>
         </p>
 
+        <!-- METHOD: REVERSE -->
         <p>
           <a name="reverse_each"><h3 id="title">#reverse</h3></a>
           The #reverse method reverses self in place.
