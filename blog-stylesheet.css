@@ -83,7 +83,7 @@ a {
 }
 
 #menu_link:hover {
-  color: white;
+  text-decoration: underline;
 }
 
 a:hover > p {
