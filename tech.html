@@ -46,9 +46,19 @@
       </div>
       <div id="menu">
         <p><a id="menu_link" href="http://janeskim.github.io/tech.html">TECH</a></p>
+          <p id="tech_menu">
+                    <a href="http://janeskim.github.io/tech.html#recursions">Ruby Recursions</a>
+            <br><br><a href="http://janeskim.github.io/tech.html#javascript_objects">JavaScript Objects</a>
+            <br><br><a href="http://janeskim.github.io/tech.html#blocks_procs_lambdas">Blocks, Procs and Lambdas</a>
+            <br><br><a href="http://janeskim.github.io/tech.html#classes">Classes</a>
+            <br><br><a href="http://janeskim.github.io/tech.html#enumerables">Enumerables</a>
+            <br><br><a href="http://janeskim.github.io/tech.html#data_structures">Data Structures</a>
+            <br><br><a href="http://janeskim.github.io/tech.html#css_positioning">CSS Positioning</a>
+            <br><br><a href="http://janeskim.github.io/tech.html#git_github_cl">Git, GitHub and the CL</a>
+            <br><br>
+          </p>
         <p><a id="menu_link" href="http://janeskim.github.io/culture.html">CULTURE</a></p>
-        <p><a id="menu_link" href="http://janeskim.github.io">PROJECTS</a></p>
-        <p><a id="menu_link" href="http://janeskim.github.io">LIBRARY</a></p>
+        <p><a id="menu_link" href="http://janeskim.github.io/projects.html">PROJECTS</a></p>
       </div>
     </div>
 
@@ -65,57 +75,627 @@
           <td>
             <hr></hr>
               <p id="date">Nov. 29, 2014</p>
-              <a href="http://janeskim.github.io/blog/t8-tech.html"><p id="title">Ruby Recursions: Recognizing Patterns and Repetition</p></a>
+              <a name="recursions"><p id="title">Ruby Recursions: Recognizing Patterns and Repetition</p></a>
           </td>
+          <tr>
+          <td>
+            <p id="post">
+              <br>In Ruby, a <strong>recursion</strong> is a method that calls itself. Recursions are helpful because they allow us to break a problem down into smaller, repetitive parts. A recursive method will continue to call itself and execute these mini steps until the problem is finally solved.
+
+              <br><br>Recursive methods have a few important characteristics. First, they include a base case. This is the condition that must be met in order for the recursion to stop. The recursion also specifies what happens to the code to reduce it to its end goal.
+
+              <br><br>Here's a simple example of a recursion:
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>>>&nbsp;def counting(number)
+              <br>>>&nbsp;&nbsp;&nbsp;return if number == 5
+              <br>>>&nbsp;&nbsp;&nbsp;puts number
+              <br>>>&nbsp;&nbsp;&nbsp;countdown(number + 1)
+              <br>>>&nbsp;end
+
+              <br><br>>>&nbsp;counting(1)
+              <br>1
+              <br>2
+              <br>3
+              <br>4
+              <br>5
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              In our example above, our recursive method takes one argument, <code>number</code>. Following this is our base conditional: <code>return if number == 5</code>. This means that our recursion will check the number each time, and if the number equals 5, the recursion will return the number 5 and exit the method. The method's main goal is to print out the number as indicated by <code>puts number</code>. Lastly, after the method has checked the number and printed it out, it calls itself inside itself <code>countdown(number + 1)</code> -- but this time, the method changes its argument by adding 1 to the number. That's end of our recursive method. Below that, we call the method and supply it with the argument <code>counting(1)</code>. As you can see, our recursion continues until the number equals 5.
+
+              <br><br>We could have used a much simpler loop to execute this action, so recursions aren't necessarily the best solution to every problem. The greatest difference between loops such as <code>for</code>, <code>while</code> and <code>times</code> loops is that recursions call the method within itself. A great example of the elegance and utility of a recursive method can be seen when calculating factorials.
+
+              <br><br>Factorials multiply a series of descending natural numbers.
+              <br><code>4! = 4 * 3 * 2 * 1</code>
+
+              <br><br>To write a formula for this, factorials essentially work like this:
+              <br><code>n! = n * (n - 1) * (n - 2 ) * (n - 3) ... until n is equal to 1.</code>
+
+              <br><br>We're subtracting 1 from the new number 'n', so another way to look at factorials is like this:
+              <br><code>n! = n * (n - 1)!</code>
+
+              <br><br>We also have our base conditional: the recursion stops when n is equal to 1.
+              <br><code>Break loop when (n - 1) = 0</code>
+
+              <br><br>We have two repetitions, two small recursive loops in our factorial, and we also have our base conditional. Let's translate our idea into code:
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>>>&nbsp;def factorial(number)
+              <br>>>&nbsp;&nbsp;&nbsp;if number == 1
+              <br>>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 1
+              <br>>>&nbsp;&nbsp;&nbsp;else
+              <br>>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return number * factorial(number - 1)
+              <br>>>&nbsp;&nbsp;&nbsp;end
+              <br>>>&nbsp;end
+
+              <br><br>>>&nbsp;factorial(4)
+              <br>24
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              We have all the ingredients to our recursion above: using a simple if/else statement, we created the base condtional that will break the loop and <code>return 1</code> when the number is equal to 1. Otherwise, our recursion calls itself with a small modification to the argument <code>return number * factorial(number - 1)</code> so that we can reduce our recursive method to its final solution. When we call our method <code>factorial(4)</code>, it returns 24.
+
+              <br><br>Recursions are complex loops that provide a lot of elegance to a solution when recursions are applicable. Here are some great resources on recursions:
+              <br>-<a href="http://ruby.bastardsbook.com/chapters/recursion/">The Bastards Book of Ruby</a>
+              <br>-<a href="http://www.theodinproject.com/ruby-programming/recursive-methods">The Odin Project</a>
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
         </tr>
         <tr>
           <td>
             <hr></hr>
               <p id="date">Nov. 20, 2014</p>
-              <a href="http://janeskim.github.io/blog/t7-javascript.html"><p id="title">JavaScript Objects and Ruby Hashes: Understanding Data Structures in JavaScript</p></a>
+              <a name="javascript_objects"><p id="title">JavaScript Objects and Ruby Hashes: Understanding Data Structures in JavaScript</p></a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br>When it comes to understanding JavaScript, it's important to note that nearly everything in JavaScript is an object. This means that variables and data are objects as well. Much like Ruby, there are various ways we can organize data using variables in JavaScript.
+
+              <br><br>A JavaScript <bold>object</bold> is defined as <bold>an unordered collection of variables called 'named values'</bold>. That's a whole lot of technical jargon, so let's break it down. JavaScript objects contain data, and this data is organized in a specific way: instead of numbering the data, objects keep track of the data (also called values) by giving a name to the data -- hence, <bold>named values</bold>. The JavaScript term for the value's name is <bold>property</bold>. In other words, properties are like variables that refer to a value.
+
+              <br><br>To think about objects in JavaScript more concretely, let's make a simple comparison to a real life object: a house. We want to create a specific house that has one story, 2 bedrooms, 1 bathroom, and a red roof. The story, bedroom, bathroom, and roof are all properties of the object and the numbers and colors are its values. Here's how we can express this in JavaScript:
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>>>&nbsp;var house = {
+                <br>>>&nbsp;&nbsp;&nbsp;story: 1,
+                <br>>>&nbsp;&nbsp;&nbsp;bedroom: 2,
+                <br>>>&nbsp;&nbsp;&nbsp;bathroom: 1,
+                <br>>>&nbsp;&nbsp;&nbsp;roof: "red"
+              <br>>>&nbsp;}
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br>In the example above, we use the JavaScript keyword <code>var</code> to relay to the computer that we're establishing a variable. Next, we set this variable to a set of curly brackets <code>{ }</code> which contains our data. The property is connected to its value using a colon <code>:</code> and each named value pair is separated by a comma. We can use numbers or strings to express values.
+
+              <br><br>Wait a minute... a named data structure with curly brackets that holds a set of paired data separated by commas -- sound familiar? JavaScript objects are similar to <bold>Ruby hashes</bold>, which organize data using key/value pairs. If you'd like a refresher on Ruby data structures, you can check out my previous blogpost <em><a href="http://janeskim.github.io/blog/t4-arrays-hashes.html">here</a></em>.
+
+              <br><br>Here are some introductory resources to help you get started with JavaScript:
+              <br>-<a href="http://eloquentjavascript.net/">Eloquent JavaScript</a>
+              <br>-<a href="http://www.w3schools.com/js/js_object_definition.asp">w3schools Intro to JavaScript objects</a>
+              <br>-<a href="http://www.w3schools.com/js/js_objects.asp">w3schools Intro to writing and manipulating JavaScript objects</a>
+              <br><br><br>
+            </p>
           </td>
         </tr>
         <tr>
           <td>
             <hr></hr>
               <p id="date">Oct. 27, 2014</p>
-              <a href="http://janeskim.github.io/blog/t6-oop-concepts.html"><p id="title">Blocks, Procs and Lambdas: More on Object Oriented Programming</p></a>
+              <a name="blocks_procs_lambdas"><p id="title">Blocks, Procs and Lambdas: More on Object Oriented Programming</p></a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br><bold><u>BLOCKS</u></bold>
+              <br><br>A Ruby <bold>block is any code that is executed using the syntax <code>do</code> and <code>end</code> or curly braces <code>{ }</code></bold>. In a previous blog post, we used blocks to iterate over arrays and hashes and blocks are also used to execute loops. Here are some examples of blocks:
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>>>&nbsp;[10, 20, 30].each { |number|
+              <br>>>&nbsp;&nbsp;&nbsp;puts number * 2
+              <br>>>&nbsp;}
+              <br>20, 40, 60
+
+              <br><br>>>&nbsp;3.times do
+              <br>>>&nbsp;&nbsp;&nbsp;puts "This block will print itself out three times."
+              <br>>>&nbsp;end
+              <br>"This block will print itself out three times."
+              <br>"This block will print itself out three times."
+              <br>"This block will print itself out three times."
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <p id="post">
+              <br>We've been working with blocks for a while, and now we know how to officially identify them. Awesome! Now let's extend our knowledge of blocks and move into procs.
+
+              <br><br><br><bold><u>PROCS</u></bold>
+
+              <br><br><bold>Procs are saved blocks</bold>. When we create a block, we have the option of assigning it to a proc. This allows us to reuse this block without having to type it out all over again. In other words, procs allow us to name a block, call that name using specific syntax, and execute the code inside the block. Procs are useful because they help maintain important Ruby rule: Don't Repeat Yourself.
+
+              <br><br>Here's the syntax for creating a proc using <code>Proc.new</code>. In our example below, we're converting integers to strings using the method <code>#to_s</code> and returning a destructive array using <code>#collect!</code> and <code>#map!</code>. You can call a proc inside parentheses using the symbol <code>&</code>.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>>>&nbsp;return_string = Proc.new { |number| number.to_s }
+
+              <br><br>>>&nbsp;[1, 2, 3].collect!(&return_string)
+              <br>["1", "2", "3"]
+
+              <br><br>>>&nbsp;[4, 5, 6].map!(&return_string)
+              <br>["4", "5", "6"]
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br><bold><u>LAMBDAS</u></bold>
+
+              <br><br><bold>Lambdas are similar to procs in that you can designate a block of code and reuse it</bold>. When it comes to writing and calling a lambda, the syntax is very similar to a proc. Check out the example below:
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>>>&nbsp;name_of_lambda = lambda { |parameter| block }
+
+              <br><br>>>&nbsp;double = lambda { |number| number * 2 }
+
+              <br><br>>>&nbsp;[1,2,3].map!(&double)
+              <br>[2,4,6]
+
+              <br><br>>>&nbsp;[4,5,6].collect!(&double)
+              <br>[8,10,12]
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br><bold><u>LAMBDAS VS. PROCS</u></bold>
+
+              <br><br>Lambdas and procs are similar in many ways but they have a few important differences. First off, <bold>a lambda checks the number of arguments that are passed to it whereas a proc does not</bold>. In the instance where a wrong number of arguments are passed, a lambda will return an error message while a proc will assign nil to its missing arguments. Another important difference between a proc and a lambda is the way they pass control inside of a method. <bold>When a lambda returns its value, it passes control to the calling method first. When a proc returns its value, it returns the value first without going back to the calling method</bold>. Here's an example explaining this in greater detail:
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br>
+              <br>>>&nbsp;def calling_method_proc
+              <br>>>&nbsp;&nbsp;&nbsp;control = Proc.new { return "The proc goes first." }
+              <br>>>&nbsp;&nbsp;&nbsp;control.call
+              <br>>>&nbsp;&nbsp;&nbsp;"The calling method is returned first."
+              <br>>>&nbsp;end
+
+              <br><br>>>&nbsp;def calling_method_lambda
+              <br>>>&nbsp;&nbsp;&nbsp;pass = lambda { return "This is a lambda test." }
+              <br>>>&nbsp;&nbsp;&nbsp;pass.call
+              <br>>>&nbsp;&nbsp;&nbsp;"The calling method is returned first."
+              <br>>>&nbsp;end
+
+              <br><br>>>&nbsp;puts calling_method_proc
+              <br>"The proc goes first."
+              <br>>>&nbsp;puts calling_method_lambda
+              <br>"The calling method is returned first."
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br>With this new knowledge in mind, we can write Ruby code that is more concise with less repetition, code that is more DRY. I learned a lot about blocks, procs and lambdas using CodeAcademy's excellent tutorial.
+              <br>-<a href="http://www.codecademy.com/courses/ruby-beginner-en-L3ZCI/0/1?curriculum_id=5059f8619189a5000201fbcb">CodeAcademy on Blocks, Procs and Lambdas</a>
+              <br><br><br>
+            </p>
           </td>
         </tr>
         <tr>
           <td>
             <hr></hr>
               <p id="date">Oct. 15, 2014</p>
-              <a href="http://janeskim.github.io/blog/t5-ruby-classes.html"><p id="title">Classes: Bringing Together Objects and Methods</p></a>
+              <a name="classes"><p id="title">Classes: Bringing Together Objects and Methods</p></a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <!--BLOG POST GOES HERE, use <br> as necessary-->
+              <br>Ruby is an <strong>object-oriented programming</strong> language. This means that getting anything done in Ruby requires working with objects: objects contain data and we ask objects to manipulate and return data in useful forms.
+
+              <br><br>Last week we looked into an example of the method <code>#each_by</code> in the <a href="http://janeskim.github.io/t4-enumerable-methods.html">Enumerable module</a>. All the methods in the Enumerable module only work on objects that are lists. This is because different types of objects can only execute certain types of tasks. An object's ability to use a method depends on its <strong>class</strong>.
+
+              <br><br>Let's take a real life example: when we have the numbers "2" and "4" we can complete addition, subtraction, multiplication and division. When we have the words "cat" and "pig", we can't run those mathematical actions on the words. "cat" - "pig" = ? Doesn't work quite the same. If we think about this in Ruby terms, the objects "2" and "4" are in the <strong>class</strong> number and the objects "cat" and "pig" are in the <strong>class</strong> words. Different types of classes have certain characteristics and those classes can execute a specific set of methods.
+
+              <br><br>In Ruby, we can actually create our own classes. We can also create objects that belong to a class and have the objects execute specific tasks. For our example, let's create a class of bikes. What are some of the characteristics a bike has? A bike has a color, wheels, and gears. What kinds of actions can a bike do? The bike can speed up, slow down and come to a full stop. Now, let's translate this into Ruby code.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>>>&nbsp;class Bike
+                  <br><br>>>&nbsp;&nbsp;&nbsp;def initialize(color, wheel_size, gears)
+                    <br>>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@color = color
+                    <br>>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@wheel_size = wheel_size
+                    <br>>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@gears = gears
+                  <br>>>&nbsp;&nbsp;&nbsp;end
+
+                  <br><br>>>&nbsp;&nbsp;&nbsp;def specs
+                    <br>>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts "Your bike is #{@color}.
+                    <br>>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts "It's wheels are #{wheel_size} and it has #{@gears} speeds."
+                  <br>>>&nbsp;&nbsp;&nbsp;end
+
+                  <br><br>>>&nbsp;&nbsp;&nbsp;def ride
+                    <br>>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts "Pedal faster!"
+                  <br>>>&nbsp;&nbsp;&nbsp;end
+
+                  <br><br>>>&nbsp;&nbsp;&nbsp;def fixed
+                    <br>>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new_gears = @gears - @gears
+                    <br>>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts "Your bike had #{@gears} gears but now it has #{new_gears}."
+                    <br>>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts "Whoops, we turned it into a fixed gear."
+                  <br>>>&nbsp;&nbsp;&nbsp;end
+                <br><br>>>&nbsp;end
+                <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+                This is a very simple example of how to create a new class. First, we declared our new class <code>Bike</code> by capitalizing the name of the class and putting <code>class</code> in front of it. Next, we defined a method called <code>initialize</code>. This method states that objects that belong to the class <code>Bike</code> must specify three characteristics: the color, the wheel size, and the gears. Whenever we declare an object under the class <code>Bike</code>, we  have to supply that object with these characteristics.
+
+                <br><br>We covered some of basic ways to establish the characteristics of our class, so let's move onto methods. Objects within a class can execute specific methods, and we create those methods inside the class definition. In our example, we defined three methods: <code>specs</code>, <code>ride</code> and <code>fixed</code>.
+
+                <br><br>Let's see our new class in action.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+                <br><br>>>&nbsp;turbo = Bike.new("red", "29 inches", 3)
+                <br>
+                <br>>>&nbsp;turbo.specs
+                <br>"Your bike is red."
+                <br>"It's wheels are 29 inches and it has 3 speeds."
+                <br>
+                <br>>>&nbsp;turbo.ride
+                <br>"Pedal faster!"
+                <br>
+                <br>>>&nbsp;turbo.fixed
+                <br>"Your bike had 3 gears but now it has 0."
+                <br>"Whoops, we turned it into a fixed gear."
+                <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+                Here we created a new object called <code>turbo</code>, defined it as belonging to the new class <code>Bike</code> and specified three characteristics. We called the methods <code>specs</code>, <code>ride</code> and <code>fixed</code> on the object <code>turbo</code>.
+
+                <br><br>Ruby is a dynamic language and there are many ways to alter objects, add methods and change our classes, but the important thing to know is <strong>every object in Ruby belongs to a class and each class has a distinct set of characteristics and methods</strong>.
+
+                <br><br>For a more in depth look at creating classes:
+                <br>-<a href="http://code.tutsplus.com/tutorials/ruby-for-newbies-working-with-classes--net-15938">Tuts+, Ruby for Newbies: Working With Classes</a>
+                <br>-<a href="http://www.tutorialspoint.com/ruby/ruby_classes.htm">Tutorials Point: Ruby Classes and Objects</a>
+                <br><br><br>
+            </p>
           </td>
         </tr>
         <tr>
           <td>
             <hr></hr>
               <p id="date">Oct. 11, 2014</p>
-              <a href="http://janeskim.github.io/blog/t4-enumerable-methods.html"><p id="title">Enumerables: Iterating with Finer Control</p></a>
+              <a name="enumerables"><p id="title">Enumerables: Iterating with Finer Control</p></a>
           </td>
         </tr>
         <tr>
+          <td>
+            <p id="post">
+              <!--BLOG POST GOES HERE, use <br> as necessary-->
+              <br>Last week we discussed how arrays and hashes are ordered lists in this <em><a href="http://janeskim.github.io/blog/t4-arrays-hashes.html">previous post</a></em>. We touched upon <strong>methods</strong> and explained them briefly as commands that can be executed by objects. This time we're going more indepth into a related Ruby concept about methods called <strong>Enumerables</strong>.
+
+              <br><br>The Enumerable is a module. A module is a collection of objects that share a common set of traits. In this case, all Enumerable share a specific structure: the object must be able to apply a method over elements within itself. For example, lists can apply a method over each item in the list. Arrays and hashes fall under the Enumerable module, and as a result, they can accept Enumerable methods. The repetition of a method over each item in an object is called <strong>iteration</strong>.
+
+              <br><br>To talk more about how Enumerables iterate over an object, let's look at the Enumerable method, <code>#group_by</code>. Simply put, the method <code>#group_by</code> breaks a list into groups based on specified criteria. It <strong>takes a list as its input and returns a hash as its output</strong>.
+
+              <br><br>Let's at the general syntax for <code>#group_by</code> then go into more specific examples.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>>>&nbsp;input.group_by { |x| x }
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br>Aside from a few exceptions, methods are called using a <code>.</code> period. In our syntax example, our <code>input</code> on the left side of the period is the object receiving the method. On the right side of the we have the method <code>group_by</code> which is being sent to the object.
+
+              <br><br>Next are a pair of curly brackets. This is where we expand the method <code>group_by</code> with more specific information on how we want it to group the input. The variable within the pipes <code>|x|</code> acts as a placeholder for each item in the input list. Think of the pipes as a door: each item of the input collection is lining up to walk through these pipes in order access the block of code specified in the curly brackets. In our syntax example above, we only have <code>x</code> after the pipes, but we can expand this part of the code to specify how we want to group each of the items.
+
+              <br><br>Let's take a look at a live example.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>>>&nbsp;input_array = [ "Jane", "Jeff", "Tonya", "Hannah", "Harry" ]
+              <br>
+              <br>>>&nbsp;input_array.group_by { |name| name.length }
+              <br>{ 4 => ["Jane", "Jeff"] , 5 => ["Tonya", "Harry"] , 6 => ["Hannah"] }
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br>We called the method <code>.length</code> on our variable <code>name</code>. The method counted the number of characters in each item in the <code>input_array</code>. The output hash took the length of item as the <strong>key</strong> and grouped the input into arrays for the <strong>value</strong>.
+
+              <br><br>Here's another example.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>>>&nbsp;input_array = [ 2, 6, 5, 4, 10, 3, 3, 51 ]
+              <br>
+              <br>>>&nbsp;input_array.group_by { |number| number.even? }
+              <br>{ true => [ 2, 6, 4, 10 ] , false => [ 5, 3, 3, 51 ] }
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br>This time we used the method with a question mark at the end <code>even?</code> which returns a true or false, also known as a boolean value, and grouped the data accordingly.
+
+              <br><br>These are the basics of Enumerables. Enumerable methods are important because they allow us to organize the data in arrays and hashes into useful and applicable forms. The Ruby-Docs are a foundational source for learning about methods, you can check out the documentation here:
+              <br>-<a href="http://www.ruby-doc.org/core-2.0/Enumerable.html">Ruby Docs for Enumerables</a>
+              <br>-<a href="http://www.ruby-doc.org/core-2.0/Array.html">Ruby Docs for Arrays</a>
+              <br>-<a href="http://www.ruby-doc.org/core-2.0/Hash.html">Ruby Docs for Hashes</a>
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
         <tr>
           <td>
             <hr></hr>
               <p id="date">Oct. 4, 2014</p>
-              <a href="http://janeskim.github.io/blog/t4-arrays-hashes.html"><p id="title">Data Structures: An Introduction to Arrays and Hashes</p></a>
+              <a name="data_structures"><p id="title">Data Structures: An Introduction to Arrays and Hashes</p></a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <!--BLOG POST GOES HERE, use <br> as necessary-->
+              <br>One of the fundamental building blocks of Ruby are <strong>variables</strong>. Just like algebra, we write Ruby variables to represent a specific value. We can also call a variable when we want to use its value in the code.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>>> x = 1234567890
+              <br>1234567890
+              <br>>> x * 2
+              <br>2469135780
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br>In the example above, the variable <code>x</code> represents the number 1234567890. In Ruby, variables can hold <strong>numbers</strong>, <strong>strings</strong> (words and sentences) and <strong>boolean expressions</strong> (a term in Ruby referring to true or false statements).
+
+              <br><br><strong>Arrays</strong> and <strong>hashes</strong> are a specific type of variable called a <strong>data structure</strong>. Just like variables, data structures hold value but arrays and hashes are different in that they can hold <strong>more than one value</strong>. In other words, arrays and hashes are lists. The two data structures differ from each other in a few important ways, so let's examine the syntax and functionality of each item.
+
+              <br><br><br><strong><u>ARRAYS</u></strong>
+
+              <br><br>This is how we write an array.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>>> my_array = [1, 2, 3, 4, 5]
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br>Just like the example of the variable <code>x</code>, we first give the array a name <code>my_array</code> and set it equal <code>=</code> to a value, which is the list contained within the brackets <code>[1, 2, 3, 4, 5]</code>.  To note the obvious, we separate different items in the list using commas. This goes across the board for arrays and hashes. We can name our array anything we want and we can fill the array's brackets with any combination of numbers, strings and boolean expressions.
+
+              <br><br>In order to access a specific value in the array, we have to know its <strong>index number</strong>. Naturally we would call <code>1</code> the first element in <code>my_array</code>, but arrays start from the index number 0. To print <code>1</code>, this is how we would write it.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>>> puts my_array[0]
+              <br>1
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br>In the example above, we use the <strong>method</strong> <code>puts</code> to print out <code>1</code>. Methods are like commands, and arrays have a plethora of methods to manipulate the data. In our very first example with the variable <code>x</code>, we used the method <code>*</code> (or multiply) to manipulate our variable. As I mentioned before, there are so many methods we can use on the data in <code>my_array</code>, but the important thing to know is arrays are <strong>indexed lists</strong>.
+
+              <br><br><br><strong><u>HASHES</u></strong>
+
+              <br><br>This is how we write a hash.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>>> my_hash = { "name" => "Jane", "city" => "Chicago", "ice_cream" => "always"}
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br>We named our hash <code>my_hash</code> and set it equal <code>=</code> to a set of values in the curly brackets <code>{ }</code>. Values are separated by commas, just like arrays. While arrays refer to elements by the index number, hashes create <strong>key-value pairs</strong>. In the example for <code>my_hash</code>, the key <code>"name"</code> refers to its value pair <code>"Jane"</code>; the key <code>"city"</code> refers to its value pair <code>"Chicago"</code>; and the key <code>"ice cream"</code> refers to its value pair <code>"always"</code>. Keys refer to their values using the symbol <code>=></code>.
+
+              <br><br>(I'm sure you also noticed all those quotation marks up there. We tell Ruby that we're using strings with quotation marks, but we don't need the quotation marks for numbers or booleans.)
+
+              <br><br>Let's call the first key-value pair for <code>my_hash</code>. The code is pretty similar to arrays.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>>> puts my_hash["name"]
+              <br>"Jane"
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br>Hashes are useful when we want to link two pieces of information together, such a list of clients and their phone numbers. There are many, many methods for accesing and using the data in hashes but the foundational take-away for hashes is they are <strong>key-value pairs</strong>.
+
+              <br><br>Arrays and hashes are just a few examples of the basic ways we can organize data within Ruby. If you want more practice with the two, <a href="http://www.codecademy.com/courses/ruby-beginner-en-F3loB/0/1?curriculum_id=5059f8619189a5000201fbcb">CodeAcademy</a> has a helpful intro course.
+              <br><br><br>
+            </p>
           </td>
         </tr>
         <tr>
           <td>
             <hr></hr>
               <p id="date">Sept. 27, 2014</p>
-              <a href="http://janeskim.github.io/blog/t2-css-blog.html"><p id="title">CSS Positioning: The Difference between Relative, Absolute and Fixed Positioning</p></a>
+              <a name="css_positioning"><p id="title">CSS Positioning: The Difference between Relative, Absolute and Fixed Positioning</p></a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <!--BLOG POST GOES HERE, use <br> as necessary-->
+              <br>We use CSS to style our HTML elements such as changing the font on a paragraph or adding a color to the background, but we can also use CSS to place elements on a page.There are four types of CSS positioning values: <strong>static</strong>, <strong>relative</strong>, <strong>absolute</strong> and <strong>fixed</strong>.
+
+              Let's take a look at an example. On the far left HTML column are four div elements; in the center is the CSS code styling those elements; and on the right are the elements rendered in their <strong>normal flow</strong>. The <strong>white</strong> div is the parent to the <strong>red</strong> and <strong>yellow</strong> div. The <strong>blue</strong> div rests below them in the normal flow.
+              <br><br><img src="https://33.media.tumblr.com/c9794121727063f63374804b0488f5c9/tumblr_ncn0buIzB41tls2v5o1_1280.png" />
+
+              <br><br>When things are declared in the <strong>static</strong> positioning, they remain in the normal flow. Declaring the static position is the same as not declaring anything at all. HTML elements are rendered from top to bottom, and child and sibling elements sit inside the parent element when things are in static positioning. As you can see, we declared the static position and all the elements remain the same.
+              <br><br><img src="https://31.media.tumblr.com/2663d82e4b0d70071df10f6a88a4183e/tumblr_ncn0buIzB41tls2v5o4_1280.png" />
+
+              <br><br>When we declare a <strong>relative</strong> position, elements remain in the normal flow but they are placed in relation to its position in the normal flow. By using the properties <strong>top</strong>, <strong>bottom</strong>, <strong>left</strong>, and <strong>right</strong>, we can move the element a certain number of pixels from the top, bottom, left or right of where it would normally be. Since the element is still part of the normal flow, it continues to work with the other HTML elements. Child elements will still be nested in their parent elements and elements will move from top to bottom, but we can specify values which will move the elements from their static position. In the example below, we declared a <strong>relative</strong> position for the <strong>red</strong> div and specified that it move 50px from the left.
+              <br><br><img src="https://33.media.tumblr.com/c54a0318d5677723c931ff3c65a44109/tumblr_ncn0buIzB41tls2v5o3_1280.png" />
+
+              <br><br>Unlike static and relative positioning, <strong>absolute</strong> positioning takes an element completely out of the normal flow. Instead it is positioned relative to the browser window. We can use the properties <strong>top</strong>, <strong>bottom</strong>, <strong>left</strong>, and <strong>right</strong> to adjust the element's location on the page. Here we can see the <strong>red</strong> is taken out of the normal flow and positioned relative to the browser window, 90px from the bottom of it.
+              <br><br><img src="https://31.media.tumblr.com/c8843ed826f16f172fa3518e6a6730d0/tumblr_ncn0buIzB41tls2v5o2_1280.png" />
+
+              <br><br>Similar to absolute positioning, the <strong>fixed</strong> position also takes the element out of the normal flow. However, it stays fixed to the position on the browser and does not scroll with the page. I'm sure you've seen websites with a navigation bar at the top that always remains there, even when you're scrolling through the page--that's an example of a fixed element.
+
+              <br><br>In case you need some more clarification, here are some helpful resources:
+              <br>-<a href="http://www.codecademy.com/forum_questions/50f4375c5b45060212005e7d">CodeAcademy forum</a>
+              <br>-<a href="http://www.cssbasics.com/css-positioning/">CSS Basics</a>
+              <br><br><br>
+            </p>
           </td>
         </tr>
         <tr>
           <td>
             <hr></hr>
                 <p id="date">Sept. 18, 2014</p>
-                <a href="http://janeskim.github.io/blog/t1-git-blog.html"><p id="title">Git, GitHub and the Command Line: Tools For Getting Started</p></a>
+                <a name="git_github_cl"><p id="title">Git, GitHub and the Command Line: Tools For Getting Started</p></a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+            <br>This is my first week of Phase 0 at DBC and already I've learned so much! Unit 1 focused on the basics of <strong>git</strong>, <strong>GitHub</strong>, and the <strong>command line</strong>--all tools that were completely new to me at the start of this week.
+
+            <br><br><strong><u>THE COMMAND LINE</u></strong>
+
+            <br><br>Let's start off by simply defining the <strong>command line</strong>. You know how you find files and folders on your Mac using Finder? The command line goes many layers underneath the visual functionality of Finder to execute similar tasks such as finding folders and files and installing software. The command line is an extremely powerful tool and I'm only hitting the surface of it, but it can essentially be described the heart of the computer.
+
+            <br><br><strong><u>GIT</u></strong>
+
+            <br><br>To talk about git and GitHub, we first have to talk about <strong>version control</strong>. Version control is a software that keeps track of all the versions of a project and <strong>git is a version control software you install onto your computer</strong> using the command line. To understand how git works, imagine a tree: we have the main project, which is the trunk of our tree, called the <strong>master</strong> branch. In order to work on the project, git creates copies of the master branch and calls these copies <strong>branches</strong>. Since branches are copies of the project, they don't affect the master, and users can experiment within the branches to try out new ideas. When a branch contains a functionality that is awesome enough to be a part of the final product, we merge the branch onto the master using three steps: <strong>add</strong>, <strong>commit</strong> and <strong>push</strong>. As for the branches we don't want? We can simply delete those.
+
+            <br><br>Because we add branches onto the master, git keeps track of all the changes made on a project through a collection of snapshots. The <strong>git log</strong> tracks all the versions of the project that came before, like a photo album of the work in progress. This is great because you can always travel back to a specific version--whether it be for debugging or experimenting--and work on the project at that particular state. Nothing is lost, all is carefully documented, and disaster is averted.
+
+            <br><br><strong><u>GITHUB</u></strong>
+
+            <br><br>We've covered git, so what about <strong>GitHub</strong>? First off, it's important to note that GitHub is different from git. While git is a piece of software that exists locally on your computer, <strong>GitHub exists remotely on the internet</strong>. Although different, the two are not separate because git and GitHub work together. By syncing git on our computer to GitHub on the internet, we can send the work we do on our computer to GitHub using the git commands, add, commit and push. We also take projects from GitHub onto our computers, and these commands are called <strong>pull</strong> or <strong>fetch</strong>.
+
+            <br><br>Here's a diagram to explain the git and GitHub workflow:
+            <br><br><img id="image_long" src="http://38.media.tumblr.com/9564bf62c603806373c257a848af233a/tumblr_ndcmpz0ooH1tls2v5o1_1280.png" />
+            <br><a id="image_link" href="http://thkoch2001.github.io/whygitisbetter/">From Scott Chacon</a>
+
+            <br><br>Lastly, it's important to note git and GitHub are essentially collaborating tools and we must view the master branch as something untouchable and holy. It's the source code that many others are drawing from and adding to. As a result, there's usually a check/balance system where your pushed changes are reviewed by another team member before it's merged onto the master branch. In other words, when working on a project we can merge onto the master branch and we can draw from the master branch but <strong>we must never work on the master branch itself</strong>.
+
+            <br><br>To get hands-on practice with the command line, git and GitHub:
+            <br>-<a href="http://cli.learncodethehardway.org/book/">The Command Line Crash Course</a>
+            <br>-<a href="http://lifehacker.com/5983680/how-the-heck-do-i-use-github">Lifehacker: How the Heck Do I Use GitHub?</a>
+            </p>
           </td>
         </tr>
       </table>
