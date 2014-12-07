@@ -143,6 +143,19 @@ a:visited > p {
   font-size: 20px;
 }
 
+#tech_menu {
+  font-size: 16px;
+  font-family: Muli;
+}
+
+#tech_menu a {
+  font-family: Muli;
+}
+
+#tech_menu a:hover {
+  text-decoration: underline;
+}
+
 /*ARCHIVE: table of contents for blogs and projects*/
 
 #archive {

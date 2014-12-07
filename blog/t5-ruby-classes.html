@@ -36,7 +36,7 @@
 
     <div id="sidebar">
       <div id="photo">
-        <img id="smileyface" src="https://38.media.tumblr.com/3f9260539316f470d3ec09885f983547/tumblr_nejqi48QU61tls2v5o1_1280.png" />
+        <a href="http://janeskim.github.io"><img id="smileyface" src="https://38.media.tumblr.com/3f9260539316f470d3ec09885f983547/tumblr_nejqi48QU61tls2v5o1_1280.png" /></a>
       </div>
       <div id="about">
         Hello! My name is Jane
@@ -46,8 +46,7 @@
       <div id="menu">
         <p><a id="menu_link" href="http://janeskim.github.io/tech.html">TECH</a></p>
         <p><a id="menu_link" href="http://janeskim.github.io/culture.html">CULTURE</a></p>
-        <p><a id="menu_link" href="http://janeskim.github.io">PROJECTS</a></p>
-        <p><a id="menu_link" href="http://janeskim.github.io">LIBRARY</a></p>
+        <p><a id="menu_link" href="http://janeskim.github.io/projects.html">PROJECTS</a></p>
       </div>
     </div>
 
@@ -79,28 +78,28 @@
         <tr>
           <td>
             <p class="code">
-              <br><br>class Bike
-                  <br><br>&nbsp;&nbsp;&nbsp;def initialize(color, wheel_size, gears)
-                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@color = color
-                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@wheel_size = wheel_size
-                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@gears = gears
-                  <br>&nbsp;&nbsp;&nbsp;end
+              <br><br>>>&nbsp;class Bike
+                  <br><br>>>&nbsp;&nbsp;&nbsp;def initialize(color, wheel_size, gears)
+                    <br>>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@color = color
+                    <br>>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@wheel_size = wheel_size
+                    <br>>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@gears = gears
+                  <br>>>&nbsp;&nbsp;&nbsp;end
 
-                  <br><br>&nbsp;&nbsp;&nbsp;def specs
-                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts "Your bike is #{@color}.
-                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts "It's wheels are #{wheel_size} and it has #{@gears} speeds."
-                  <br>&nbsp;&nbsp;&nbsp;end
+                  <br><br>>>&nbsp;&nbsp;&nbsp;def specs
+                    <br>>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts "Your bike is #{@color}.
+                    <br>>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts "It's wheels are #{wheel_size} and it has #{@gears} speeds."
+                  <br>>>&nbsp;&nbsp;&nbsp;end
 
-                  <br><br>&nbsp;&nbsp;&nbsp;def ride
-                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts "Pedal faster!"
-                  <br>&nbsp;&nbsp;&nbsp;end
+                  <br><br>>>&nbsp;&nbsp;&nbsp;def ride
+                    <br>>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts "Pedal faster!"
+                  <br>>>&nbsp;&nbsp;&nbsp;end
 
-                  <br><br>&nbsp;&nbsp;&nbsp;def fixed
-                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new_gears = @gears - @gears
-                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts "Your bike had #{@gears} gears but now it has #{new_gears}."
-                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts "Whoops, we turned it into a fixed gear."
-                  <br>&nbsp;&nbsp;&nbsp;end
-                <br><br>end
+                  <br><br>>>&nbsp;&nbsp;&nbsp;def fixed
+                    <br>>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new_gears = @gears - @gears
+                    <br>>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts "Your bike had #{@gears} gears but now it has #{new_gears}."
+                    <br>>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts "Whoops, we turned it into a fixed gear."
+                  <br>>>&nbsp;&nbsp;&nbsp;end
+                <br><br>>>&nbsp;end
                 <br><br><br>
             </p>
           </td>
@@ -108,7 +107,7 @@
         <tr>
           <td>
             <p id="post">
-                <br>This is a very simple example of how to create a new class. First, we declared our new class <code>Bike</code> by capitalizing the name of the class and putting <code>class</code> in front of it. Next, we defined a method called <code>initialize</code>. This method states that objects that belong to the class <code>Bike</code> must specify three characteristics: the color, the wheel size, and the gears. Whenever we declare an object under the class <code>Bike</code>, we  have to supply that object with these characteristics.
+                This is a very simple example of how to create a new class. First, we declared our new class <code>Bike</code> by capitalizing the name of the class and putting <code>class</code> in front of it. Next, we defined a method called <code>initialize</code>. This method states that objects that belong to the class <code>Bike</code> must specify three characteristics: the color, the wheel size, and the gears. Whenever we declare an object under the class <code>Bike</code>, we  have to supply that object with these characteristics.
 
                 <br><br>We covered some of basic ways to establish the characteristics of our class, so let's move onto methods. Objects within a class can execute specific methods, and we create those methods inside the class definition. In our example, we defined three methods: <code>specs</code>, <code>ride</code> and <code>fixed</code>.
 
@@ -119,16 +118,16 @@
         <tr>
           <td>
             <p class="code">
-                <br><br>>>turbo = Bike.new("red", "29 inches", 3)
+                <br><br>>>&nbsp;turbo = Bike.new("red", "29 inches", 3)
                 <br>
-                <br>>>turbo.specs
+                <br>>>&nbsp;turbo.specs
                 <br>"Your bike is red."
                 <br>"It's wheels are 29 inches and it has 3 speeds."
                 <br>
-                <br>>>turbo.ride
+                <br>>>&nbsp;turbo.ride
                 <br>"Pedal faster!"
                 <br>
-                <br>>>turbo.fixed
+                <br>>>&nbsp;turbo.fixed
                 <br>"Your bike had 3 gears but now it has 0."
                 <br>"Whoops, we turned it into a fixed gear."
                 <br><br><br>
@@ -138,13 +137,13 @@
         <tr>
           <td>
             <p id="post">
-                <br>Here we created a new object called <code>turbo</code>, defined it as belonging to the new class <code>Bike</code> and specified three characteristics. We called the methods <code>specs</code>, <code>ride</code> and <code>fixed</code> on the object <code>turbo</code>.
+                Here we created a new object called <code>turbo</code>, defined it as belonging to the new class <code>Bike</code> and specified three characteristics. We called the methods <code>specs</code>, <code>ride</code> and <code>fixed</code> on the object <code>turbo</code>.
 
                 <br><br>Ruby is a dynamic language and there are many ways to alter objects, add methods and change our classes, but the important thing to know is <strong>every object in Ruby belongs to a class and each class has a distinct set of characteristics and methods</strong>.
 
-                <br><br><br>For a more in depth look at creating classes:
-                <br><a href="http://code.tutsplus.com/tutorials/ruby-for-newbies-working-with-classes--net-15938">Tuts+, Ruby for Newbies: Working With Classes</a>
-                <br><a href="http://www.tutorialspoint.com/ruby/ruby_classes.htm">Tutorials Point: Ruby Classes and Objects</a>
+                <br><br>For a more in depth look at creating classes:
+                <br>-<a href="http://code.tutsplus.com/tutorials/ruby-for-newbies-working-with-classes--net-15938">Tuts+, Ruby for Newbies: Working With Classes</a>
+                <br>-<a href="http://www.tutorialspoint.com/ruby/ruby_classes.htm">Tutorials Point: Ruby Classes and Objects</a>
             </p>
           </td>
         </tr>
