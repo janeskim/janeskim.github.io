@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link type="text/html" rel="stylesheet" href="../blog-stylesheet.css">
+  <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <title>Jane S. Kim</title>
+</head>
+<body>
+
+  <!--COLORBAR-->
+
+  <div id="color_bar"></div>
+
+
+  <!--HEADER-->
+
+  <div id="header">
+
+    <div id="logo">
+        <a id="black_logo" href="http://janeskim.github.io">Jane S. Kim</a>
+    </div>
+
+    <div id="social">
+      <a href="mailto:kim.jane.sue@gmail.com"><img id="social_icon" src="http://files.gandi.ws/gandi37399/image/email2.png" /></a>
+      <a href="http://www.twitter.com/happygeometry"><img id="social_icon" src="http://innovationcafepsu.files.wordpress.com/2013/04/twitter1.gif" /></a>
+      <a href="https://www.linkedin.com/pub/jane-kim/a3/210/79"><img id="social_icon" src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_black-128.png" /></a>
+      <a href="http://www.github.com/janeskim"><img id="social_icon" src="http://jonathanodonnell.herokuapp.com/github.png" /></a>
+    </div>
+  </div>
+
+ <!--START OF CONTENT DIV-->
+ <div id="content">
+
+   <!--SIDEBAR-->
+
+    <div id="sidebar">
+      <div id="photo">
+        <a href="http://janeskim.github.io"><img id="smileyface" src="https://38.media.tumblr.com/3f9260539316f470d3ec09885f983547/tumblr_nejqi48QU61tls2v5o1_1280.png" /></a>
+      </div>
+      <div id="about">
+        Hello! My name is Jane
+        <br>and I'm a student at
+        <br>DevBootcamp in Chicago.
+      </div>
+      <div id="menu">
+        <p><a id="menu_link" href="http://janeskim.github.io/tech.html">TECH</a></p>
+        <p><a id="menu_link" href="http://janeskim.github.io/culture.html">CULTURE</a></p>
+        <p><a id="menu_link" href="http://janeskim.github.io/projects.html">PROJECTS</a></p>
+      </div>
+    </div>
+
+   <!--ARCHIVE: part of "content ID"-->
+
+    <div id="archive">
+      <table>
+        <tr>
+          <td>
+            <hr></hr>
+              <p id="date">Oct. 5, 2014</p>
+              <p id="title">Data Structures: An Introduction to Arrays and Hashes</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <!--BLOG POST GOES HERE, use <br> as necessary-->
+              <br>One of the fundamental building blocks of Ruby are <strong>variables</strong>. Just like algebra, we write Ruby variables to represent a specific value. We can also call a variable when we want to use its value in the code.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>>> x = 1234567890
+              <br>1234567890
+              <br>>> x * 2
+              <br>2469135780
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br>In the example above, the variable <code>x</code> represents the number 1234567890. In Ruby, variables can hold <strong>numbers</strong>, <strong>strings</strong> (words and sentences) and <strong>boolean expressions</strong> (a term in Ruby referring to true or false statements).
+
+              <br><br><strong>Arrays</strong> and <strong>hashes</strong> are a specific type of variable called a <strong>data structure</strong>. Just like variables, data structures hold value but arrays and hashes are different in that they can hold <strong>more than one value</strong>. In other words, arrays and hashes are lists. The two data structures differ from each other in a few important ways, so let's examine the syntax and functionality of each item.
+
+              <br><br><br><strong><u>ARRAYS</u></strong>
+
+              <br><br>This is how we write an array.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>>> my_array = [1, 2, 3, 4, 5]
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br>Just like the example of the variable <code>x</code>, we first give the array a name <code>my_array</code> and set it equal <code>=</code> to a value, which is the list contained within the brackets <code>[1, 2, 3, 4, 5]</code>.  To note the obvious, we separate different items in the list using commas. This goes across the board for arrays and hashes. We can name our array anything we want and we can fill the array's brackets with any combination of numbers, strings and boolean expressions.
+
+              <br><br>In order to access a specific value in the array, we have to know its <strong>index number</strong>. Naturally we would call <code>1</code> the first element in <code>my_array</code>, but arrays start from the index number 0. To print <code>1</code>, this is how we would write it.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>>> puts my_array[0]
+              <br>1
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br>In the example above, we use the <strong>method</strong> <code>puts</code> to print out <code>1</code>. Methods are like commands, and arrays have a plethora of methods to manipulate the data. In our very first example with the variable <code>x</code>, we used the method <code>*</code> (or multiply) to manipulate our variable. As I mentioned before, there are so many methods we can use on the data in <code>my_array</code>, but the important thing to know is arrays are <strong>indexed lists</strong>.
+
+              <br><br><br><strong><u>HASHES</u></strong>
+
+              <br><br>This is how we write a hash.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>>> my_hash = { "name" => "Jane", "city" => "Chicago", "ice_cream" => "always"}
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br>We named our hash <code>my_hash</code> and set it equal <code>=</code> to a set of values in the curly brackets <code>{ }</code>. Values are separated by commas, just like arrays. While arrays refer to elements by the index number, hashes create <strong>key-value pairs</strong>. In the example for <code>my_hash</code>, the key <code>"name"</code> refers to its value pair <code>"Jane"</code>; the key <code>"city"</code> refers to its value pair <code>"Chicago"</code>; and the key <code>"ice cream"</code> refers to its value pair <code>"always"</code>. Keys refer to their values using the symbol <code>=></code>.
+
+              <br><br>(I'm sure you also noticed all those quotation marks up there. We tell Ruby that we're using strings with quotation marks, but we don't need the quotation marks for numbers or booleans.)
+
+              <br><br>Let's call the first key-value pair for <code>my_hash</code>. The code is pretty similar to arrays.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>>> puts my_hash["name"]
+              <br>"Jane"
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br>Hashes are useful when we want to link two pieces of information together, such a list of clients and their phone numbers. There are many, many methods for accesing and using the data in hashes but the foundational take-away for hashes is they are <strong>key-value pairs</strong>.
+
+              <br><br>Arrays and hashes are just a few examples of the basic ways we can organize data within Ruby. If you want more practice with the two, <a href="http://www.codecademy.com/courses/ruby-beginner-en-F3loB/0/1?curriculum_id=5059f8619189a5000201fbcb">CodeAcademy</a> has a helpful intro course.
+            </p>
+          </td>
+        </tr>
+      </table>
+
+        <!--FOOTER nested inside archive/contents div for relative positioning-->
+        <div id="footer">
+          Copyright 2014 Jane S. Kim | Powered by Octopress
+        </div>
+
+    </div>
+    <!--END OF ARCHIVE DIV-->
+
+ </div>
+  <!--END OF CONTENT DIV-->
+
+</body>
+</html>

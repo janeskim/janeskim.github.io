@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link type="text/html" rel="stylesheet" href="../blog-stylesheet.css">
+  <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <title>Jane S. Kim</title>
+</head>
+<body>
+
+  <!--COLORBAR-->
+
+  <div id="color_bar"></div>
+
+
+  <!--HEADER-->
+
+  <div id="header">
+
+    <div id="logo">
+        <a id="black_logo" href="http://janeskim.github.io">Jane S. Kim</a>
+    </div>
+
+    <div id="social">
+      <a href="mailto:kim.jane.sue@gmail.com"><img id="social_icon" src="http://files.gandi.ws/gandi37399/image/email2.png" /></a>
+      <a href="http://www.twitter.com/happygeometry"><img id="social_icon" src="http://innovationcafepsu.files.wordpress.com/2013/04/twitter1.gif" /></a>
+      <a href="https://www.linkedin.com/pub/jane-kim/a3/210/79"><img id="social_icon" src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_black-128.png" /></a>
+      <a href="http://www.github.com/janeskim"><img id="social_icon" src="http://jonathanodonnell.herokuapp.com/github.png" /></a>
+    </div>
+  </div>
+
+ <!--START OF CONTENT DIV-->
+ <div id="content">
+
+   <!--SIDEBAR-->
+
+    <div id="sidebar">
+      <div id="photo">
+        <a href="http://janeskim.github.io"><img id="smileyface" src="https://38.media.tumblr.com/3f9260539316f470d3ec09885f983547/tumblr_nejqi48QU61tls2v5o1_1280.png" /></a>
+      </div>
+      <div id="about">
+        Hello! My name is Jane
+        <br>and I'm a student at
+        <br>DevBootcamp in Chicago.
+      </div>
+      <div id="menu">
+        <p><a id="menu_link" href="http://janeskim.github.io/tech.html">TECH</a></p>
+        <p><a id="menu_link" href="http://janeskim.github.io/culture.html">CULTURE</a></p>
+        <p><a id="menu_link" href="http://janeskim.github.io/projects.html">PROJECTS</a></p>
+      </div>
+    </div>
+
+   <!--ARCHIVE: part of "content ID"-->
+
+    <div id="archive">
+      <table>
+        <tr>
+          <td>
+            <hr></hr>
+              <p id="date">Nov. 29, 2014</p>
+              <p id="title">Ruby Recursions: Recognizing Patterns and Repetition</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br>In Ruby, a <strong>recursion</strong> is a method that calls itself. Recursions are helpful because they allow us to break a problem down into smaller, repetitive parts. A recursive method will continue to call itself and execute these mini steps until the problem is finally solved.
+
+              <br><br>Recursive methods have a few important characteristics. First, they include a base case. This is the condition that must be met in order for the recursion to stop. The recursion also specifies what happens to the code to reduce it to its end goal.
+
+              <br><br>Here's a simple example of a recursion:
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>>>&nbsp;def counting(number)
+              <br>>>&nbsp;&nbsp;&nbsp;return if number == 5
+              <br>>>&nbsp;&nbsp;&nbsp;puts number
+              <br>>>&nbsp;&nbsp;&nbsp;countdown(number + 1)
+              <br>>>&nbsp;end
+
+              <br><br>>>&nbsp;counting(1)
+              <br>1
+              <br>2
+              <br>3
+              <br>4
+              <br>5
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              In our example above, our recursive method takes one argument, <code>number</code>. Following this is our base conditional: <code>return if number == 5</code>. This means that our recursion will check the number each time, and if the number equals 5, the recursion will return the number 5 and exit the method. The method's main goal is to print out the number as indicated by <code>puts number</code>. Lastly, after the method has checked the number and printed it out, it calls itself inside itself <code>countdown(number + 1)</code> -- but this time, the method changes its argument by adding 1 to the number. That's end of our recursive method. Below that, we call the method and supply it with the argument <code>counting(1)</code>. As you can see, our recursion continues until the number equals 5.
+
+              <br><br>We could have used a much simpler loop to execute this action, so recursions aren't necessarily the best solution to every problem. The greatest difference between loops such as <code>for</code>, <code>while</code> and <code>times</code> loops is that recursions call the method within itself. A great example of the elegance and utility of a recursive method can be seen when calculating factorials.
+
+              <br><br>Factorials multiply a series of descending natural numbers.
+              <br><code>4! = 4 * 3 * 2 * 1</code>
+
+              <br><br>To write a formula for this, factorials essentially work like this:
+              <br><code>n! = n * (n - 1) * (n - 2 ) * (n - 3) ... until n is equal to 1.</code>
+
+              <br><br>We're subtracting 1 from the new number 'n', so another way to look at factorials is like this:
+              <br><code>n! = n * (n - 1)!</code>
+
+              <br><br>We also have our base conditional: the recursion stops when n is equal to 1.
+              <br><code>Break loop when (n - 1) = 0</code>
+
+              <br><br>We have two repetitions, two small recursive loops in our factorial, and we also have our base conditional. Let's translate our idea into code:
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>>>&nbsp;def factorial(number)
+              <br>>>&nbsp;&nbsp;&nbsp;if number == 1
+              <br>>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 1
+              <br>>>&nbsp;&nbsp;&nbsp;else
+              <br>>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return number * factorial(number - 1)
+              <br>>>&nbsp;&nbsp;&nbsp;end
+              <br>>>&nbsp;end
+
+              <br><br>>>&nbsp;factorial(4)
+              <br>24
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              We have all the ingredients to our recursion above: using a simple if/else statement, we created the base condtional that will break the loop and <code>return 1</code> when the number is equal to 1. Otherwise, our recursion calls itself with a small modification to the argument <code>return number * factorial(number - 1)</code> so that we can reduce our recursive method to its final solution. When we call our method <code>factorial(4)</code>, it returns 24.
+
+              <br><br>Recursions are complex loops that provide a lot of elegance to a solution when recursions are applicable. Here are some great resources on recursions:
+              <br>-<a href="http://ruby.bastardsbook.com/chapters/recursion/">The Bastards Book of Ruby</a>
+              <br>-<a href="http://www.theodinproject.com/ruby-programming/recursive-methods">The Odin Project</a>
+            </p>
+          </td>
+        </tr>
+      </table>
+
+        <!--FOOTER nested inside archive/contents div for relative positioning-->
+        <div id="footer">
+          Copyright 2014 Jane S. Kim | Powered by Octopress
+        </div>
+
+    </div>
+    <!--END OF ARCHIVE DIV-->
+
+ </div>
+  <!--END OF CONTENT DIV-->
+
+</body>
+</html>

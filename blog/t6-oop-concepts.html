@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link type="text/html" rel="stylesheet" href="../blog-stylesheet.css">
+  <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <title>Jane S. Kim</title>
+</head>
+<body>
+
+  <!--COLORBAR-->
+
+  <div id="color_bar"></div>
+
+
+  <!--HEADER-->
+
+  <div id="header">
+
+    <div id="logo">
+        <a id="black_logo" href="http://janeskim.github.io">Jane S. Kim</a>
+    </div>
+
+    <div id="social">
+      <a href="mailto:kim.jane.sue@gmail.com"><img id="social_icon" src="http://files.gandi.ws/gandi37399/image/email2.png" /></a>
+      <a href="http://www.twitter.com/happygeometry"><img id="social_icon" src="http://innovationcafepsu.files.wordpress.com/2013/04/twitter1.gif" /></a>
+      <a href="https://www.linkedin.com/pub/jane-kim/a3/210/79"><img id="social_icon" src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_black-128.png" /></a>
+      <a href="http://www.github.com/janeskim"><img id="social_icon" src="http://jonathanodonnell.herokuapp.com/github.png" /></a>
+    </div>
+  </div>
+
+ <!--START OF CONTENT DIV-->
+ <div id="content">
+
+   <!--SIDEBAR-->
+
+    <div id="sidebar">
+      <div id="photo">
+        <a href="http://janeskim.github.io"><img id="smileyface" src="https://38.media.tumblr.com/3f9260539316f470d3ec09885f983547/tumblr_nejqi48QU61tls2v5o1_1280.png" /></a>
+      </div>
+      <div id="about">
+        Hello! My name is Jane
+        <br>and I'm a student at
+        <br>DevBootcamp in Chicago.
+      </div>
+      <div id="menu">
+        <p><a id="menu_link" href="http://janeskim.github.io/tech.html">TECH</a></p>
+        <p><a id="menu_link" href="http://janeskim.github.io/culture.html">CULTURE</a></p>
+        <p><a id="menu_link" href="http://janeskim.github.io/projects.html">PROJECTS</a></p>
+      </div>
+    </div>
+
+   <!--ARCHIVE: part of "content ID"-->
+
+    <div id="archive">
+      <table>
+        <tr>
+          <td>
+            <hr></hr>
+              <p id="date">Oct. 27, 2014</p>
+              <p id="title">Blocks, Procs and Lambdas: More on Object Oriented Programming</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br><bold><u>BLOCKS</u></bold>
+              <br><br>A Ruby <bold>block is any code that is executed using the syntax <code>do</code> and <code>end</code> or curly braces <code>{ }</code></bold>. In a previous blog post, we used blocks to iterate over arrays and hashes and blocks are also used to execute loops. Here are some examples of blocks:
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>>>&nbsp;[10, 20, 30].each { |number|
+              <br>>>&nbsp;&nbsp;&nbsp;puts number * 2
+              <br>>>&nbsp;}
+              <br>20, 40, 60
+
+              <br><br>>>&nbsp;3.times do
+              <br>>>&nbsp;&nbsp;&nbsp;puts "This block will print itself out three times."
+              <br>>>&nbsp;end
+              <br>"This block will print itself out three times."
+              <br>"This block will print itself out three times."
+              <br>"This block will print itself out three times."
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <p id="post">
+              <br>We've been working with blocks for a while, and now we know how to officially identify them. Awesome! Now let's extend our knowledge of blocks and move into procs.
+
+              <br><br><br><bold><u>PROCS</u></bold>
+
+              <br><br><bold>Procs are saved blocks</bold>. When we create a block, we have the option of assigning it to a proc. This allows us to reuse this block without having to type it out all over again. In other words, procs allow us to name a block, call that name using specific syntax, and execute the code inside the block. Procs are useful because they help maintain important Ruby rule: Don't Repeat Yourself.
+
+              <br><br>Here's the syntax for creating a proc using <code>Proc.new</code>. In our example below, we're converting integers to strings using the method <code>#to_s</code> and returning a destructive array using <code>#collect!</code> and <code>#map!</code>. You can call a proc inside parentheses using the symbol <code>&</code>.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>>>&nbsp;return_string = Proc.new { |number| number.to_s }
+
+              <br><br>>>&nbsp;[1, 2, 3].collect!(&return_string)
+              <br>["1", "2", "3"]
+
+              <br><br>>>&nbsp;[4, 5, 6].map!(&return_string)
+              <br>["4", "5", "6"]
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br><bold><u>LAMBDAS</u></bold>
+
+              <br><br><bold>Lambdas are similar to procs in that you can designate a block of code and reuse it</bold>. When it comes to writing and calling a lambda, the syntax is very similar to a proc. Check out the example below:
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br><br>>>&nbsp;name_of_lambda = lambda { |parameter| block }
+
+              <br><br>>>&nbsp;double = lambda { |number| number * 2 }
+
+              <br><br>>>&nbsp;[1,2,3].map!(&double)
+              <br>[2,4,6]
+
+              <br><br>>>&nbsp;[4,5,6].collect!(&double)
+              <br>[8,10,12]
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br><bold><u>LAMBDAS VS. PROCS</u></bold>
+
+              <br><br>Lambdas and procs are similar in many ways but they have a few important differences. First off, <bold>a lambda checks the number of arguments that are passed to it whereas a proc does not</bold>. In the instance where a wrong number of arguments are passed, a lambda will return an error message while a proc will assign nil to its missing arguments. Another important difference between a proc and a lambda is the way they pass control inside of a method. <bold>When a lambda returns its value, it passes control to the calling method first. When a proc returns its value, it returns the value first without going back to the calling method</bold>. Here's an example explaining this in greater detail:
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="code">
+              <br>
+              <br>>>&nbsp;def calling_method_proc
+              <br>>>&nbsp;&nbsp;&nbsp;control = Proc.new { return "The proc goes first." }
+              <br>>>&nbsp;&nbsp;&nbsp;control.call
+              <br>>>&nbsp;&nbsp;&nbsp;"The calling method is returned first."
+              <br>>>&nbsp;end
+
+              <br><br>>>&nbsp;def calling_method_lambda
+              <br>>>&nbsp;&nbsp;&nbsp;pass = lambda { return "This is a lambda test." }
+              <br>>>&nbsp;&nbsp;&nbsp;pass.call
+              <br>>>&nbsp;&nbsp;&nbsp;"The calling method is returned first."
+              <br>>>&nbsp;end
+
+              <br><br>>>&nbsp;puts calling_method_proc
+              <br>"The proc goes first."
+              <br>>>&nbsp;puts calling_method_lambda
+              <br>"The calling method is returned first."
+              <br><br><br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <br>With this new knowledge in mind, we can write Ruby code that is more concise with less repetition, code that is more DRY. I learned a lot about blocks, procs and lambdas using CodeAcademy's excellent tutorial.
+              <br>-<a href="http://www.codecademy.com/courses/ruby-beginner-en-L3ZCI/0/1?curriculum_id=5059f8619189a5000201fbcb">CodeAcademy on Blocks, Procs and Lambdas</a>
+            </p>
+          </td>
+        </tr>
+      </table>
+
+        <!--FOOTER nested inside archive/contents div for relative positioning-->
+        <div id="footer">
+          Copyright 2014 Jane S. Kim | Powered by Octopress
+        </div>
+
+    </div>
+    <!--END OF ARCHIVE DIV-->
+
+ </div>
+  <!--END OF CONTENT DIV-->
+
+</body>
+</html>

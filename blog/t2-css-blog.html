@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link type="text/html" rel="stylesheet" href="../blog-stylesheet.css">
+  <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <title>Jane S. Kim</title>
+</head>
+<body>
+
+  <!--COLORBAR-->
+
+  <div id="color_bar"></div>
+
+
+  <!--HEADER-->
+
+  <div id="header">
+
+    <div id="logo">
+        <a id="black_logo" href="http://janeskim.github.io">Jane S. Kim</a>
+    </div>
+
+    <div id="social">
+      <a href="mailto:kim.jane.sue@gmail.com"><img id="social_icon" src="http://files.gandi.ws/gandi37399/image/email2.png" /></a>
+      <a href="http://www.twitter.com/happygeometry"><img id="social_icon" src="http://innovationcafepsu.files.wordpress.com/2013/04/twitter1.gif" /></a>
+      <a href="https://www.linkedin.com/pub/jane-kim/a3/210/79"><img id="social_icon" src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_black-128.png" /></a>
+      <a href="http://www.github.com/janeskim"><img id="social_icon" src="http://jonathanodonnell.herokuapp.com/github.png" /></a>
+    </div>
+  </div>
+
+
+ <!--START OF CONTENT DIV-->
+ <div id="content">
+
+   <!--SIDEBAR-->
+
+    <div id="sidebar">
+      <div id="photo">
+        <a href="http://janeskim.github.io"><img id="smileyface" src="https://38.media.tumblr.com/3f9260539316f470d3ec09885f983547/tumblr_nejqi48QU61tls2v5o1_1280.png" /></a>
+      </div>
+      <div id="about">
+        Hello! My name is Jane
+        <br>and I'm a student at
+        <br>DevBootcamp in Chicago.
+      </div>
+      <div id="menu">
+        <p><a id="menu_link" href="http://janeskim.github.io/tech.html">TECH</a></p>
+        <p><a id="menu_link" href="http://janeskim.github.io/culture.html">CULTURE</a></p>
+        <p><a id="menu_link" href="http://janeskim.github.io/projects.html">PROJECTS</a></p>
+      </div>
+    </div>
+
+   <!--ARCHIVE: part of "content ID"-->
+
+    <div id="archive">
+      <table>
+        <tr>
+          <td>
+            <hr></hr>
+              <p id="date">Sept. 27, 2014</p>
+              <p id="title">CSS Positioning: The Difference between Static, Relative, Absolute and Fixed Positioning</td>
+        </tr>
+        <tr>
+          <td>
+            <p id="post">
+              <!--BLOG POST GOES HERE, use <br> as necessary-->
+              <br>We use CSS to style our HTML elements such as changing the font on a paragraph or adding a color to the background, but we can also use CSS to place elements on a page.There are four types of CSS positioning values: <strong>static</strong>, <strong>relative</strong>, <strong>absolute</strong> and <strong>fixed</strong>.
+
+              Let's take a look at an example. On the far left HTML column are four div elements; in the center is the CSS code styling those elements; and on the right are the elements rendered in their <strong>normal flow</strong>. The <strong>white</strong> div is the parent to the <strong>red</strong> and <strong>yellow</strong> div. The <strong>blue</strong> div rests below them in the normal flow.
+              <br><br><img src="https://33.media.tumblr.com/c9794121727063f63374804b0488f5c9/tumblr_ncn0buIzB41tls2v5o1_1280.png" />
+
+              <br><br>When things are declared in the <strong>static</strong> positioning, they remain in the normal flow. Declaring the static position is the same as not declaring anything at all. HTML elements are rendered from top to bottom, and child and sibling elements sit inside the parent element when things are in static positioning. As you can see, we declared the static position and all the elements remain the same.
+              <br><br><img src="https://31.media.tumblr.com/2663d82e4b0d70071df10f6a88a4183e/tumblr_ncn0buIzB41tls2v5o4_1280.png" />
+
+              <br><br>When we declare a <strong>relative</strong> position, elements remain in the normal flow but they are placed in relation to its position in the normal flow. By using the properties <strong>top</strong>, <strong>bottom</strong>, <strong>left</strong>, and <strong>right</strong>, we can move the element a certain number of pixels from the top, bottom, left or right of where it would normally be. Since the element is still part of the normal flow, it continues to work with the other HTML elements. Child elements will still be nested in their parent elements and elements will move from top to bottom, but we can specify values which will move the elements from their static position. In the example below, we declared a <strong>relative</strong> position for the <strong>red</strong> div and specified that it move 50px from the left.
+              <br><br><img src="https://33.media.tumblr.com/c54a0318d5677723c931ff3c65a44109/tumblr_ncn0buIzB41tls2v5o3_1280.png" />
+
+              <br><br>Unlike static and relative positioning, <strong>absolute</strong> positioning takes an element completely out of the normal flow. Instead it is positioned relative to the browser window. We can use the properties <strong>top</strong>, <strong>bottom</strong>, <strong>left</strong>, and <strong>right</strong> to adjust the element's location on the page. Here we can see the <strong>red</strong> is taken out of the normal flow and positioned relative to the browser window, 90px from the bottom of it.
+              <br><br><img src="https://31.media.tumblr.com/c8843ed826f16f172fa3518e6a6730d0/tumblr_ncn0buIzB41tls2v5o2_1280.png" />
+
+              <br><br>Similar to absolute positioning, the <strong>fixed</strong> position also takes the element out of the normal flow. However, it stays fixed to the position on the browser and does not scroll with the page. I'm sure you've seen websites with a navigation bar at the top that always remains there, even when you're scrolling through the page--that's an example of a fixed element.
+
+              <br><br>In case you need some more clarification, here are some helpful resources:
+              <br>-<a href="http://www.codecademy.com/forum_questions/50f4375c5b45060212005e7d">CodeAcademy forum</a>
+              <br>-<a href="http://www.cssbasics.com/css-positioning/">CSS Basics</a>
+            </p>
+          </td>
+        </tr>
+      </table>
+      <!--FOOTER-->
+      <div id="footer">
+        Copyright 2014 Jane S. Kim | Powered by Octopress
+      </div>
+    </div>
+ </div>
+  <!--END OF CONTENT DIV-->
+
+
+
+</body>
+</html>
+
